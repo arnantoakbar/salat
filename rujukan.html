@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rujukan — Salat by Flavida</title>
+<meta name="description" content="Seluruh dalil yang dipakai situs ini, lengkap dengan teks Arab, terjemahan, derajat hadits, dan tautan ke sumbernya. Cara kurasinya dijelaskan terbuka.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#utama">Lompat ke isi</a>
+
+<script src="js/sprite.js?v=3"></script>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">Salat</span>
+        <span class="nav-brand-sub">by Flavida</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu">
+      <span class="nav-toggle-garis"></span>
+    </button>
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="gerakan.html">Gerakan</a>
+      <a href="lengkap.html">Salat Lengkap</a>
+      <a href="persiapan.html">Persiapan</a>
+      <a href="dzikir.html">Dzikir</a>
+      <a href="rujukan.html">Rujukan</a>
+    </div>
+  </div>
+</nav>
+
+<main id="utama" class="section" style="padding-top: var(--space-8)">
+  <div class="wrap wrap-narrow">
+
+    <span class="overline">Rujukan</span>
+    <h1 class="flav-display-l">Semua yang dikutip, beserta sumbernya.</h1>
+    <p class="flav-body" style="margin-top: var(--space-4)">
+      Halaman ini memuat seluruh dalil yang dipakai situs — <span id="jumlah-dalil"></span>.
+      Tidak ada yang disembunyikan dan tidak ada yang dipotong.
+    </p>
+
+    <!-- ═══ CARA KURASI ═══ -->
+    <h2 class="flav-heading-l" style="margin-top: var(--space-12)">Cara kami mengumpulkannya</h2>
+
+    <div class="note" style="margin-top: var(--space-5)">
+      <div class="note-title">Dikumpulkan sekali, dipakai berulang</div>
+      Tata cara salat sudah baku sejak dicontohkan Nabi dan tidak berubah. Jadi sumbernya
+      tidak perlu dicari ulang tiap kali halaman dibuka: seluruhnya dikumpulkan satu kali
+      lewat skrip kurasi, disimpan sebagai berkas data biasa, lalu dipanggil berulang-ulang.
+      Situs ini <strong>tidak memakai mesin pencari dan tidak memanggil AI</strong> saat kamu
+      memakainya.
+    </div>
+
+    <div class="saran" style="margin-top: var(--space-5)">
+      <div class="saran-item">
+        <span class="saran-nomor">1</span>
+        <span>
+          <span class="saran-judul">Teks Arab dan terjemahannya disalin apa adanya</span>
+          Hadits diambil dari <a href="https://www.hadits.id" target="_blank" rel="noopener noreferrer">hadits.id</a>,
+          ayat Al-Qur'an dari <a href="https://equran.id" target="_blank" rel="noopener noreferrer">equran.id</a>
+          yang memakai mushaf dan terjemahan Kementerian Agama. Tidak ada teks yang kami tulis
+          ulang dari ingatan.
+        </span>
+      </div>
+      <div class="saran-item">
+        <span class="saran-nomor">2</span>
+        <span>
+          <span class="saran-judul">Bacaan salat dipotong langsung dari teks dalilnya</span>
+          Lafaz seperti takbir dan tasyahud tidak diketik ulang, melainkan diiris oleh skrip
+          dari teks hadits sumbernya. Kalau penanda irisannya salah, skripnya berhenti dengan
+          galat — bukan diam-diam menghasilkan kutipan yang keliru.
+        </span>
+      </div>
+      <div class="saran-item">
+        <span class="saran-nomor">3</span>
+        <span>
+          <span class="saran-judul">Derajat hadits ditulis apa adanya</span>
+          Termasuk ketika sebuah riwayat dinilai lemah. Contohnya riwayat "lutut lebih dulu"
+          saat turun sujud, yang dinilai <em>dha'if</em> oleh Al-Albani padahal mayoritas
+          ulama tetap mengamalkannya. Perbedaan seperti itu kami tampilkan, bukan kami rapikan.
+        </span>
+      </div>
+      <div class="saran-item">
+        <span class="saran-nomor">4</span>
+        <span>
+          <span class="saran-judul">Kutipan tidak pernah dipenggal</span>
+          Teks dalil selalu ditampilkan utuh. Bagian yang sedang dibahas hanya disorot,
+          selebihnya tetap terbaca supaya konteksnya tidak hilang.
+        </span>
+      </div>
+    </div>
+
+    <div class="note note-green" style="margin-top: var(--space-6)">
+      <div class="note-title">Yang tidak bisa dijamin oleh kode</div>
+      Pencocokan dengan sumber daring memastikan nomor dan teksnya benar. Tapi penilaian
+      derajat hadits dan penerapan fikihnya adalah ilmu yang perlu diperiksa manusia yang
+      kompeten — dan antar ulama pun bisa berbeda. Kalau kamu menemukan kekeliruan,
+      <a href="https://github.com/arnantoakbar/salat/issues/new" target="_blank" rel="noopener noreferrer">laporkan di GitHub</a>.
+    </div>
+
+    <!-- ═══ KONTEKS HUKUM INDONESIA ═══ -->
+    <h2 class="flav-heading-l" style="margin-top: var(--space-12)">Konteks hukum di Indonesia</h2>
+    <p class="flav-body-sm" style="margin-top: var(--space-3)">
+      Berbeda dengan waris yang punya Kompilasi Hukum Islam, <strong>tata cara salat tidak
+      diatur oleh peraturan perundang-undangan mana pun di Indonesia</strong> — dan memang
+      tidak perlu. Yang dijamin negara adalah kebebasan menjalankannya. Prinsip itu berulang
+      kali dikutip dalam undang-undang, misalnya pada pertimbangan Undang-Undang Pesantren
+      yang bersandar pada Pasal 29 UUD 1945.
+    </p>
+
+    <div class="dalil" style="margin-top: var(--space-5)">
+      <div class="dalil-rujukan">UU No. 18 Tahun 2019 tentang Pesantren
+        <span class="dalil-klausa">Bagian Menimbang huruf a</span>
+      </div>
+      <div class="dalil-terjemah">
+        bahwa setiap orang bebas memeluk agama dan beribadat menurut agamanya serta memilih
+        pendidikan dan pengajaran dalam satu sistem pendidikan nasional yang meningkatkan
+        keimanan dan ketakwaan serta akhlak mulia dalam rangka mencerdaskan kehidupan bangsa
+        sebagaimana diamanatkan dalam Undang-Undang Dasar Negara Republik Indonesia Tahun 1945
+      </div>
+      <div class="dalil-sumber">Status: berlaku. Undang-undang ini menyebut Pasal 29 UUD 1945
+        dalam bagian Mengingat.</div>
+      <div class="dalil-tautan">
+        <a href="https://pasal.id/peraturan/uu/uu-no-18-tahun-2019" target="_blank" rel="noopener noreferrer">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="#i-tautan"></use></svg>
+          Periksa di Pasal.id
+        </a>
+      </div>
+    </div>
+    <p class="flav-caption" style="margin-top: var(--space-3)">
+      Kutipan hukum di atas bukan nasihat hukum, dan bukan dasar tata cara salat. Dicantumkan
+      hanya sebagai konteks: perbedaan gerakan salat adalah perkara fikih, bukan perkara hukum
+      negara.
+    </p>
+
+    <!-- ═══ DAFTAR DALIL ═══ -->
+    <h2 class="flav-heading-l" style="margin-top: var(--space-12)">Dari Al-Qur'an</h2>
+    <div id="daftar-quran" style="margin-top: var(--space-5)"></div>
+
+    <h2 class="flav-heading-l" style="margin-top: var(--space-12)">Dari hadits</h2>
+    <p class="flav-body-sm" style="margin-top: var(--space-2); margin-bottom: var(--space-5)">
+      Penomoran mengikuti hadits.id. Nomor hadits bisa berbeda antar penerbit, jadi selalu
+      buka tautannya kalau mau mencocokkan dengan kitab cetak.
+    </p>
+    <div id="daftar-hadits"></div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        Situs ini alat bantu belajar, <strong>bukan pengganti guru dan bukan lembaga
+        fatwa</strong>. Verifikasikan kepada ustadz atau ulama yang kamu percaya.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="gerakan.html">Lihat gerakan</a> &nbsp;·&nbsp;
+        <a href="https://github.com/arnantoakbar/salat" target="_blank" rel="noopener noreferrer">Kode sumber di GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+      Kodenya terbuka — silakan diperiksa dan dikoreksi.<br>
+      Made with 🔥 in Indonesia
+    </div>
+  </div>
+</footer>
+
+<script src="data/dalil.js?v=3"></script>
+<script src="data/bacaan.js?v=3"></script>
+<script src="data/gerakan.js?v=3"></script>
+<script src="js/ui-dalil.js?v=3"></script>
+<script src="js/ui-rujukan.js?v=3"></script>
+<script src="js/ui-nav.js?v=3"></script>
+</body>
+</html>

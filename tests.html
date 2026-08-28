@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uji Data — Salat by Flavida</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<script src="js/sprite.js?v=3"></script>
+
+<main class="section" style="padding-top: var(--space-10)">
+  <div class="wrap wrap-narrow">
+    <span class="overline">Uji data</span>
+    <h1 class="flav-display-m">Apakah datanya masih utuh?</h1>
+    <p class="flav-body" style="margin-top: var(--space-4)">
+      Halaman ini memeriksa isi situs: dalil yang hilang, bacaan tanpa arti, pose yang tidak
+      ada, penanda sorot yang tidak cocok dengan teksnya, atau gerakan tanpa rujukan.
+      Jalankan setiap kali datanya diubah.
+    </p>
+    <p class="flav-caption" style="margin-top: var(--space-3)">
+      Yang tidak bisa diuji di sini: benar atau tidaknya penilaian derajat hadits dan
+      penerapan fikihnya. Itu perlu diperiksa orang yang paham.
+    </p>
+
+    <div id="ringkasan" style="margin: var(--space-8) 0"></div>
+    <div id="hasil"></div>
+  </div>
+</main>
+
+<script src="data/dalil.js?v=3"></script>
+<script src="data/bacaan.js?v=3"></script>
+<script src="data/gerakan.js?v=3"></script>
+<script src="data/rakaat.js?v=3"></script>
+<script src="js/tiga/pose.js?v=3"></script>
+<script src="js/tiga/kamera-stub.js?v=3"></script>
+<script src="js/tiga/kamera.js?v=3"></script>
+<script src="js/tests.js?v=3"></script>
+<script>
+(function () {
+  var hasil = window.UJI.jalankan();
+  var gagal = hasil.filter(function (h) { return !h.lulus; });
+
+  document.getElementById('ringkasan').innerHTML =
+    '<div class="note ' + (gagal.length ? '' : 'note-green') + '">' +
+    '<div class="note-title">' +
+    (gagal.length ? gagal.length + ' dari ' + hasil.length + ' pemeriksaan gagal'
+                  : 'Semua ' + hasil.length + ' pemeriksaan lulus') +
+    '</div>' +
+    (gagal.length ? 'Perbaiki dulu sebelum situsnya dipakai orang.'
+                  : 'Data situs konsisten: setiap gerakan punya peragaan, bacaan, dan dalil.') +
+    '</div>';
+
+  document.getElementById('hasil').innerHTML = hasil.map(function (h) {
+    return '<div class="uji-baris">' +
+      '<span class="badge ' + (h.lulus ? 'badge-green' : 'badge-lemah') + '">' +
+      (h.lulus ? 'LULUS' : 'GAGAL') + '</span>' +
+      '<div><strong>' + h.nama + '</strong><p>' + h.pesan + '</p></div></div>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

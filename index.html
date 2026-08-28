@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salat — cara salat sesuai Al-Qur'an dan sunnah, tanpa bikin bingung</title>
+<meta name="description" content="Lihat animasi tiap gerakan salat beserta bacaan dan dalilnya. Ganti rujukan mazhab, gerakannya menyesuaikan. Gratis, tanpa daftar, semua diproses di browser kamu sendiri.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#utama">Lompat ke isi</a>
+
+<script src="js/sprite.js?v=3"></script>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">Salat</span>
+        <span class="nav-brand-sub">by Flavida</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu">
+      <span class="nav-toggle-garis"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="gerakan.html">Gerakan</a>
+      <a href="lengkap.html">Salat Lengkap</a>
+      <a href="persiapan.html">Persiapan</a>
+      <a href="dzikir.html">Dzikir</a>
+      <a href="rujukan.html">Rujukan</a>
+      <a class="btn btn-dark btn-sm" href="gerakan.html">Lihat Gerakan</a>
+    </div>
+  </div>
+</nav>
+
+<main id="utama">
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <!--
+      Latar pola geometri Islam (bintang delapan / khatim). Dua lapis dengan
+      ukuran dan arah gerak berbeda supaya terasa berlapis, keduanya nyaris
+      transparan agar tidak mengganggu keterbacaan.
+    -->
+    <div class="hero-pola" aria-hidden="true">
+      <svg class="hero-pola-lapis hero-pola-besar" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="khatim-besar" width="120" height="120" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="1.1">
+              <rect x="38" y="38" width="44" height="44"/>
+              <path d="M60 29 91 60 60 91 29 60Z"/>
+              <rect x="-22" y="-22" width="44" height="44"/>
+              <path d="M0 -31 31 0 0 31 -31 0Z"/>
+              <rect x="98" y="-22" width="44" height="44"/>
+              <path d="M120 -31 151 0 120 31 89 0Z"/>
+              <rect x="-22" y="98" width="44" height="44"/>
+              <path d="M0 89 31 120 0 151 -31 120Z"/>
+              <rect x="98" y="98" width="44" height="44"/>
+              <path d="M120 89 151 120 120 151 89 120Z"/>
+              <path d="M31 0 60 29M89 0 60 29M31 120 60 91M89 120 60 91M0 31 29 60M0 89 29 60M120 31 91 60M120 89 91 60"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#khatim-besar)"/>
+      </svg>
+
+      <svg class="hero-pola-lapis hero-pola-kecil" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="khatim-kecil" width="60" height="60" patternUnits="userSpaceOnUse">
+            <g fill="none" stroke="currentColor" stroke-width="0.9">
+              <rect x="19" y="19" width="22" height="22"/>
+              <path d="M30 14.5 45.5 30 30 45.5 14.5 30Z"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#khatim-kecil)"/>
+      </svg>
+    </div>
+
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="lencana-syariat">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+            Tata cara salat menurut Al-Qur'an &amp; sunnah
+          </span>
+          <h1>Salatnya sudah dicontohkan.</h1>
+          <p class="hero-lead">
+            Yang bikin bingung cuma satu: kenapa gerakan orang beda-beda. Di sini kamu bisa
+            <span class="sorot">melihat tiap gerakan diperagakan</span>, membaca bacaannya,
+            dan menelusuri dalilnya sampai ke sumbernya.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="gerakan.html">
+              Lihat Gerakan <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
+            </a>
+            <a class="btn btn-ghost" href="#kenapa">Kenapa bisa beda?</a>
+          </div>
+          <p class="flav-caption" style="margin-top: var(--space-5)">
+            Gratis · Tanpa daftar · Tidak ada data yang dikirim ke mana pun
+          </p>
+        </div>
+
+        <!-- Demo memakai mesin 3D yang sama dengan halaman gerakan -->
+        <div class="demo" aria-label="Contoh cara kerja situs">
+          <div class="demo-tahap" id="demo-tahap"></div>
+          <div class="panggung" id="demo-panggung">
+            <div class="panggung-gagal">
+              <div>Peramban ini belum bisa menampilkan animasi 3D, tapi seluruh bacaan
+                dan dalil tetap bisa dibaca.</div>
+            </div>
+          </div>
+          <p class="demo-keterangan" id="demo-keterangan"></p>
+          <div class="demo-titik" id="demo-titik"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KENAPA BISA BEDA ═══ -->
+  <section class="section" id="kenapa" style="background: var(--bg-secondary)">
+    <div class="wrap">
+      <div style="max-width: 64ch; margin-bottom: var(--space-12)">
+        <span class="overline">Kenapa kami membuat ini</span>
+        <h2 class="flav-display-l">Gerakan yang berbeda itu bukan tanda ada yang salah.</h2>
+        <p class="flav-body" style="margin-top: var(--space-5)">
+          Orang di sebelahmu mengangkat tangan sampai telinga, kamu sampai bahu. Dia qunut,
+          kamu tidak. Buat yang baru belajar — apalagi yang baru masuk Islam — pemandangan
+          seperti ini bikin ragu: jangan-jangan salatku selama ini salah.
+        </p>
+        <p class="flav-body" style="margin-top: var(--space-4)">
+          Padahal hampir semua perbedaan itu berasal dari riwayat yang sama-sama sahih.
+          Para sahabat melihat Nabi salat pada waktu yang berbeda dan meriwayatkan apa yang
+          mereka lihat. Para ulama menimbang riwayat-riwayat itu dan sampai pada kesimpulan
+          yang sedikit berbeda. <span class="sorot">Selama berpegang pada Al-Qur'an dan
+          sunnah, tidak ada yang "paling benar" untuk diperdebatkan</span> — yang ada adalah
+          pilihan yang perlu kamu pahami, lalu kamu tekuni.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-mata"></use></svg></div>
+          <h3 class="flav-heading-m">Dilihat, bukan dibayangkan</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Tiap gerakan diperagakan model 3D bergaya sketsa dan diulang terus, disorot dari
+            sudut yang paling jelas. Kamu bisa memperhatikannya sampai paham.
+          </p>
+        </div>
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-bolak"></use></svg></div>
+          <h3 class="flav-heading-m">Ganti rujukan, gerakan ikut berubah</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Empat mazhab tersedia sebagai pilihan. Pilih satu, dan animasinya langsung
+            menyesuaikan — beserta dalil yang dipakai pendapat itu.
+          </p>
+        </div>
+        <div class="card card-hover">
+          <div class="card-icon"><svg class="ic" aria-hidden="true" style="color:var(--color-flame)"><use href="#i-kitab"></use></svg></div>
+          <h3 class="flav-heading-m">Dalilnya utuh, bukan potongan</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Teks Arab dan terjemahannya ditampilkan lengkap, dengan tautan ke sumbernya.
+            Derajat haditsnya ditulis apa adanya — termasuk kalau ada yang dinilai lemah.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TIGA LANGKAH ═══ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="overline">Cara pakainya</span>
+      <h2 class="flav-display-l" style="max-width: 20ch">Tiga langkah, tanpa isian yang
+        bikin pusing.</h2>
+
+      <div class="grid grid-3" style="margin-top: var(--space-10)">
+        <div class="card">
+          <span class="badge">Langkah 1</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">Pilih gerakannya</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Tiga belas gerakan, berurutan dari berdiri sampai salam. Ketuk salah satu — tidak
+            ada formulir, tidak ada pertanyaan.
+          </p>
+        </div>
+        <div class="card">
+          <span class="badge">Langkah 2</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">Perhatikan dan baca</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Animasi berulang, bacaan Arab dengan cara baca dan artinya, lalu kotak
+            "kenapa berbeda?" kalau gerakan itu memang diperselisihkan.
+          </p>
+        </div>
+        <div class="card">
+          <span class="badge">Langkah 3</span>
+          <h3 class="flav-heading-m" style="margin-top: var(--space-4)">Ubah dan bandingkan</h3>
+          <p class="flav-body-sm" style="margin-top: var(--space-3)">
+            Ganti mazhabnya kapan saja. Gerakan, bacaan, dan dalilnya langsung menyesuaikan,
+            jadi kamu bisa melihat sendiri di mana letak bedanya.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BATASAN — jujur di depan ═══ -->
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div class="batasan">
+        <div class="batasan-kepala">
+          <span class="badge badge-muted">Batasan</span>
+          <h2 class="flav-heading-l" style="margin-top: var(--space-3)">Yang perlu kamu tahu
+            sebelum memakai</h2>
+        </div>
+        <div class="batasan-poin">
+          <div class="batasan-item">
+            <span class="batasan-ikon">
+              <svg class="ic" aria-hidden="true"><use href="#i-kitab"></use></svg>
+            </span>
+            <div>
+              <strong>Ini alat bantu belajar, bukan pengganti guru</strong>
+              <p>Situs ini menyusun dan mengutip, tidak berfatwa. Untuk perkara yang
+                menyangkut kondisimu sendiri — sakit, cedera, atau keadaan khusus lain —
+                tanyakan kepada ustadz atau ulama yang kamu percaya.</p>
+            </div>
+          </div>
+          <div class="batasan-item">
+            <span class="batasan-ikon">
+              <svg class="ic" aria-hidden="true"><use href="#i-waspada"></use></svg>
+            </span>
+            <div>
+              <strong>Yang ditampilkan adalah pendapat masyhur tiap mazhab</strong>
+              <p>Di dalam satu mazhab pun sering ada beberapa pendapat. Yang kami tampilkan
+                adalah yang paling dikenal, dan kalau ada pendapat lain yang penting, kami
+                sebutkan di catatan.</p>
+            </div>
+          </div>
+          <div class="batasan-item">
+            <span class="batasan-ikon">
+              <svg class="ic" aria-hidden="true"><use href="#i-hati"></use></svg>
+            </span>
+            <div>
+              <strong>Model 3D-nya sengaja dibuat seperti sketsa</strong>
+              <p>Bentuknya tembus pandang tanpa wajah, supaya yang terbaca adalah sudut
+                sendi dan posisi badan — bukan rupa orangnya. Perkiraan sudutnya disetel
+                terhadap uraian dalam hadits, tetap ada kemungkinan meleset sedikit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KODE TERBUKA ═══ -->
+  <section class="section" style="padding-top: 0" id="kontribusi">
+    <div class="wrap">
+      <div class="terbuka">
+        <div class="terbuka-kiri">
+          <span class="overline">Kodenya terbuka</span>
+          <h2 class="flav-display-m" style="max-width: 16ch">Periksa sendiri, jangan percaya
+            begitu saja.</h2>
+
+          <p class="flav-body" style="margin-top: var(--space-5)">
+            Ini menyangkut ibadah, jadi kami tidak minta kamu percaya pada kotak hitam.
+            Seluruh isinya bisa dibaca siapa pun: <span class="sorot">daftar dalilnya, teks
+            Arab dan terjemahannya, sampai skrip yang mengambilnya dari sumber</span>.
+            Kalau ada yang keliru, itu bisa ditunjukkan dan diperbaiki.
+          </p>
+
+          <!-- Kutipan diambil dari data/dalil.js, tidak diketik ulang di sini —
+               aturan yang sama berlaku untuk seluruh kutipan di situs ini. -->
+          <div style="margin-top: var(--space-6)"
+               data-dalil="bukhari-631" data-sorot="ikut"></div>
+
+          <p class="flav-body-sm" style="margin-top: var(--space-5)">
+            Kalau kamu punya ilmu yang bisa membuat alat ini lebih benar, sumbangkanlah.
+            Bukan untuk kami — untuk muslim mana pun yang sedang bingung dan tidak enak
+            bertanya.
+          </p>
+
+          <div class="btn-row" style="margin-top: var(--space-6)">
+            <a class="btn btn-dark" href="https://github.com/arnantoakbar/salat"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="ic ic-sm ic-isi" aria-hidden="true"><use href="#i-github"></use></svg>
+              Lihat kodenya di GitHub
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/arnantoakbar/salat/issues/new"
+               target="_blank" rel="noopener noreferrer">
+              Laporkan kekeliruan
+            </a>
+          </div>
+        </div>
+
+        <div class="terbuka-kanan">
+          <!-- Cuplikan sungguhan dari data situs, bukan hiasan. -->
+          <div class="kode-kartu">
+            <div class="kode-bar">
+              <span class="kode-titik"></span><span class="kode-titik"></span><span class="kode-titik"></span>
+              <span class="kode-nama">data/gerakan.js</span>
+            </div>
+            <pre class="kode-isi"><code><span class="k-c">// Takbiratul ihram — dua riwayat sahih,</span>
+<span class="k-c">// dua tinggi tangan yang berbeda</span>
+varian: {
+  syafii: { langkah: [
+    { pose: <span class="k-s">'angkat-bahu'</span> } ],
+    dalil: [{ k: <span class="k-s">'bukhari-735'</span> }] },
+
+  hanafi: { langkah: [
+    { pose: <span class="k-s">'angkat-telinga'</span> } ],
+    dalil: [{ k: <span class="k-s">'muslim-401'</span> }] }
+}</code></pre>
+          </div>
+
+          <div class="kontrib">
+            <div class="kontrib-judul">Yang paling kami butuhkan</div>
+            <ul class="kontrib-daftar">
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+                <span><strong>Koreksi dalil</strong> dari yang paham — nomor hadits, derajat,
+                  atau terjemahan yang keliru.</span>
+              </li>
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-mata"></use></svg>
+                <span><strong>Koreksi gerakan</strong> kalau ada sudut badan di animasi yang
+                  tidak sesuai uraian dalam riwayatnya.</span>
+              </li>
+              <li>
+                <svg class="ic ic-sm" aria-hidden="true"><use href="#i-info"></use></svg>
+                <span><strong>Pendapat mazhab yang terlewat</strong>, lengkap dengan rujukan
+                  kitabnya.</span>
+              </li>
+            </ul>
+            <p class="kontrib-kaki">
+              Tidak bisa ngoding? Tulis saja di <em>Issues</em> dengan bahasa biasa. Yang
+              kami perlukan ilmunya, bukan kodenya.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="section" style="padding-top: 0">
+    <div class="wrap">
+      <div style="background: var(--bg-dark); border-radius: var(--radius-cta); padding: var(--space-12) var(--space-6); text-align: center; position: relative; overflow: hidden">
+        <div style="position:absolute; inset:0; background: radial-gradient(ellipse 60% 80% at 50% 110%, rgba(232,57,29,0.35), transparent 65%)"></div>
+        <div style="position: relative">
+          <h2 class="flav-display-m" style="color: var(--fg-on-dark); max-width: 20ch; margin-inline: auto">
+            Berhenti ragu. Mulai dari gerakan pertama.
+          </h2>
+          <p style="color: var(--fg-on-dark-dim); margin: var(--space-5) auto var(--space-8); max-width: 46ch">
+            Tidak perlu daftar, tidak perlu isi apa-apa. Buka, lihat, pahami.
+          </p>
+          <a class="btn btn-primary" href="gerakan.html">
+            Lihat Gerakan <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        Salat by Flavida adalah alat bantu belajar, <strong>bukan sumber utama dan bukan
+        lembaga fatwa</strong>. Verifikasikan kepada ustadz atau ulama terdekat, terutama
+        untuk keadaan khusus yang tidak dibahas di sini.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="rujukan.html">Rujukan Al-Qur'an &amp; Hadits</a> &nbsp;·&nbsp;
+        <a href="https://github.com/arnantoakbar/salat" target="_blank" rel="noopener noreferrer">Kode sumber di GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+      Kodenya terbuka — silakan diperiksa dan dikoreksi.<br>
+      Made with 🔥 in Indonesia
+    </div>
+  </div>
+</footer>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="js/tiga/rig.js?v=3"></script>
+<script src="js/tiga/pose.js?v=3"></script>
+<script src="js/tiga/kamera.js?v=3"></script>
+<script src="js/tiga/viewer.js?v=3"></script>
+<script src="data/dalil.js?v=3"></script>
+<script src="data/bacaan.js?v=3"></script>
+<script src="data/gerakan.js?v=3"></script>
+<script src="js/ui-dalil.js?v=3"></script>
+<script src="js/ui-sisip.js?v=3"></script>
+<script src="js/ui-landing.js?v=3"></script>
+<script src="js/ui-nav.js?v=3"></script>
+</body>
+</html>

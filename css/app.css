@@ -620,6 +620,9 @@
 }
 
 .lihat-kanan { display: grid; gap: var(--space-4); min-width: 0; }
+/* Lencana hukum berbentuk pil, jadi tidak boleh ikut melebar penuh
+   seperti item grid lain di kolom ini. */
+.lihat-kanan > .badge { justify-self: start; }
 
 .lihat-nav {
   display: flex;
@@ -812,3 +815,232 @@
   cursor: help;
   font-style: normal;
 }
+
+/* ═══════════════════════════════════════════════════
+   HALAMAN GERAKAN — bagian tambahan
+   ═══════════════════════════════════════════════════ */
+
+.lihat-kepala { margin-bottom: var(--space-6); }
+.lihat-kepala h1 { max-width: 20ch; }
+
+.urutan-bungkus {
+  margin-bottom: var(--space-6);
+  /* Chip digulir sampai tepi layar di ponsel supaya terasa bisa digeser,
+     tapi isinya tetap sejajar dengan kolom teks di layar lebar. */
+  margin-inline: calc(var(--space-5) * -1);
+  padding-inline: var(--space-5);
+}
+@media (min-width: 768px) {
+  .urutan-bungkus { margin-inline: 0; padding-inline: 0; }
+}
+
+.panggung-bantuan {
+  margin-top: var(--space-3);
+  font-size: var(--text-caption);
+  color: var(--fg3);
+  line-height: 1.5;
+}
+
+.mazhab-bungkus {
+  margin-top: var(--space-5);
+  padding: var(--space-4);
+  border-radius: var(--radius-card);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+}
+.mazhab-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ember);
+  margin-bottom: var(--space-3);
+}
+.mazhab-label .ic { color: var(--color-flame); }
+.mazhab-catatan {
+  margin-top: var(--space-3);
+  font-size: var(--text-caption);
+  color: var(--fg3);
+  line-height: 1.5;
+}
+
+.blok + .blok, .beda, .akordeon { margin-top: var(--space-4); }
+.blok-judul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--fw-bold);
+  color: var(--fg1);
+  margin-bottom: var(--space-3);
+}
+.blok-judul .ic { color: var(--color-flame); }
+.bacaan + .bacaan { margin-top: var(--space-3); }
+
+.bacaan-judul {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--fw-bold);
+  color: var(--fg1);
+}
+.bacaan-ayat + .bacaan-ayat {
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border-default);
+}
+
+.dalil-latin {
+  font-size: var(--text-caption);
+  font-style: italic;
+  color: var(--fg3);
+  margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+.dalil-nomor { color: var(--fg3); font-style: normal; }
+.dalil-ringkas {
+  margin-top: var(--space-3);
+  font-size: var(--text-body-xs);
+  color: var(--fg1);
+  line-height: var(--lh-body);
+}
+.dalil + .dalil {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-default);
+}
+
+/* Derajat hadits yang lemah ditandai berbeda — bukan disembunyikan. */
+.badge-lemah {
+  background: rgba(245, 166, 35, 0.16);
+  color: #8A5A00;
+}
+
+.beda-catatan {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--border-default);
+  font-size: var(--text-caption);
+  color: var(--fg3);
+  line-height: 1.6;
+}
+
+mark.ayat-sorot {
+  background: rgba(245, 166, 35, 0.32);
+  color: inherit;
+  padding: 1px 2px;
+  border-radius: 3px;
+}
+
+/* ═══════════════════════════════════════════════════
+   HALAMAN TEKS (persiapan, dzikir)
+   ═══════════════════════════════════════════════════ */
+
+.langkah-kartu {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--border-default);
+}
+.langkah-kartu:last-of-type { border-bottom: none; }
+
+.langkah-nomor {
+  flex: none;
+  width: 34px; height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-flame-tint-md);
+  color: var(--color-ember);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--fw-bold);
+}
+.langkah-kartu > div:last-child { min-width: 0; flex: 1; }
+.langkah-kartu h2 { margin-bottom: var(--space-2); }
+.langkah-kartu .bacaan { margin-top: var(--space-4); }
+.langkah-kartu .dalil { margin-top: var(--space-4); }
+
+/* Kartu waktu salat yang sedang dipilih */
+.pilih-kartu[aria-current="true"] {
+  border-color: var(--color-flame);
+  box-shadow: 0 0 0 1px var(--color-flame) inset;
+}
+.pilih-kartu[aria-current="true"] .pilih-ikon {
+  background: var(--color-flame);
+  color: #FFF8F0;
+}
+
+/* ═══════════════════════════════════════════════════
+   HALAMAN RUJUKAN
+   ═══════════════════════════════════════════════════ */
+
+.rujukan-item {
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--border-default);
+}
+.rujukan-item:last-child { border-bottom: none; }
+.rujukan-item .dalil { margin-top: 0; }
+
+.rujukan-jejak {
+  margin-top: var(--space-3);
+  padding-left: var(--space-4);
+  font-size: var(--text-caption);
+  color: var(--fg3);
+  line-height: 1.6;
+}
+
+/* Daftar bernomor untuk penjelasan metode (pola dari waris) */
+.saran { display: grid; gap: var(--space-3); }
+.saran-item {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border-radius: var(--radius-card);
+  background: #FFFFFF;
+  border: 1px solid var(--border-default);
+}
+.saran-nomor {
+  flex: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: var(--text-caption);
+  font-weight: var(--fw-bold);
+  background: var(--color-flame-tint-sm);
+  color: var(--color-flame);
+}
+.saran-item > span:last-child {
+  display: block; flex: 1; min-width: 0;
+  font-size: var(--text-body-xs);
+  color: var(--fg2);
+  line-height: var(--lh-body);
+}
+.saran-judul {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: var(--fw-bold);
+  color: var(--fg1);
+  margin-bottom: var(--space-1);
+}
+
+/* ═══════════════════════════════════════════════════
+   HALAMAN UJI
+   ═══════════════════════════════════════════════════ */
+
+.uji-baris {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border-default);
+}
+.uji-baris:last-child { border-bottom: none; }
+.uji-baris .badge { flex: none; min-width: 62px; justify-content: center; }
+.uji-baris strong { font-size: var(--text-body-s); }
+.uji-baris p { font-size: var(--text-caption); color: var(--fg2); margin-top: 2px; }

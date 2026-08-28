@@ -122,9 +122,12 @@
         antialias: true,
         alpha: true,
         // Isi kanvas biasanya dibuang setelah frame ditampilkan. Opsi ini
-        // menahannya supaya kanvas masih bisa dibaca di luar loop —
-        // dipakai alat uji untuk memotret pose, tidak untuk halaman biasa.
-        preserveDrawingBuffer: !!opsi.simpanBuffer
+        // menahannya supaya kanvas masih bisa dibaca di luar loop — perlu
+        // untuk memotret pose menjadi gambar diam. Tidak aktif pada
+        // kunjungan biasa; dinyalakan lewat opsi atau dengan menambahkan
+        // ?buffer=1 pada alamat halaman saat mengambil tangkapan layar.
+        preserveDrawingBuffer: !!opsi.simpanBuffer ||
+          /[?&]buffer=1/.test(location.search)
       });
     } catch (e) {
       wadah.classList.add('tanpa-webgl');
@@ -164,6 +167,10 @@
     this.terapkanPose('berdiri');
     this._gambarSekali();
     this._aturLoop();
+
+    // Pegangan ke panggung lewat elemennya. Berguna untuk memeriksa keadaan
+    // panggung dari konsol dan untuk mengambil gambar diam tiap pose.
+    wadah.__panggung = this;
   }
 
   /* Ukuran mengikuti wadah. */
@@ -347,6 +354,22 @@
   };
 
   /* ── API kecil untuk halaman ─────────────────────────────────── */
+
+  /*
+   * Memajukan animasi tanpa menunggu requestAnimationFrame, lalu menggambar
+   * satu frame. Dipakai untuk mengambil gambar diam sebuah pose — termasuk
+   * ketika loop sedang dijeda karena tab tidak terlihat.
+   */
+  Viewer.prototype.majuFrame = function (ms, kali) {
+    ms = ms || 60;
+    kali = kali || 1;
+    for (var i = 0; i < kali; i++) {
+      if (this.jalan) this._perbaruiPemutar(ms);
+      this.kamera.perbarui(ms / 1000, true);
+    }
+    this.renderer.render(this.scene, this.kamera.obj);
+    return this._poseKini;
+  };
 
   Viewer.prototype.setKecepatan = function (x) { this.kecepatan = x; };
   Viewer.prototype.setJalan = function (jalan) { this.jalan = jalan; };

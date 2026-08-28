@@ -67,15 +67,7 @@
     akar: function (x, y, z) { v.setJalan(false); v.rig.sendi.akar.position.set(x, y, z); },
     // Memaksa frame maju tanpa requestAnimationFrame — dipakai saat panel
     // pratinjau disembunyikan sehingga loop dijeda otomatis.
-    tick: function (ms, kali) {
-      ms = ms || 60; kali = kali || 20;
-      for (var i = 0; i < kali; i++) {
-        if (v.jalan) v._perbaruiPemutar(ms);
-        v.kamera.perbarui(ms / 1000, true);
-      }
-      v.renderer.render(v.scene, v.kamera.obj);
-      return v._poseKini + ' / ' + v._fase;
-    },
+    tick: function (ms, kali) { return v.majuFrame(ms || 60, kali || 20); },
     // Titik dunia sendi penting — dipakai menyetel pose secara terukur
     // (mis. dahi dan telapak harus menyentuh lantai saat sujud).
     titik: function () {

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lihat Gerakan Salat — Salat by Flavida</title>
+<meta name="description" content="Pilih gerakan salat, lihat animasinya berulang dari berbagai sudut, lengkap dengan bacaan dan dalilnya. Ganti rujukan mazhab, gerakannya menyesuaikan langsung.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#utama">Lompat ke isi</a>
+
+<script src="js/sprite.js?v=3"></script>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">Salat</span>
+        <span class="nav-brand-sub">by Flavida</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu">
+      <span class="nav-toggle-garis"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="gerakan.html">Gerakan</a>
+      <a href="lengkap.html">Salat Lengkap</a>
+      <a href="persiapan.html">Persiapan</a>
+      <a href="dzikir.html">Dzikir</a>
+      <a href="rujukan.html">Rujukan</a>
+    </div>
+  </div>
+</nav>
+
+<main id="utama" class="section" style="padding-top: var(--space-8)">
+  <div class="wrap">
+
+    <div class="lihat-kepala">
+      <span class="overline">Lihat gerakan</span>
+      <h1 class="flav-display-l" id="judul-gerakan">Gerakan salat</h1>
+      <p class="flav-body" id="ringkas-gerakan" style="max-width: 60ch; margin-top: var(--space-3)"></p>
+    </div>
+
+    <!-- Pemilih gerakan, urut dari awal sampai akhir -->
+    <div class="urutan-bungkus">
+      <h2 class="sr-only">Pilih gerakan</h2>
+      <div class="urutan" id="urutan" role="group" aria-label="Urutan gerakan salat"></div>
+    </div>
+
+    <div class="lihat-grid">
+
+      <!-- Kiri: panggung 3D + kontrol -->
+      <div class="lihat-kiri">
+        <div class="panggung" id="panggung">
+          <div class="panggung-label">
+            <span class="panggung-nama" id="panggung-nama"></span>
+            <span class="panggung-tahap" id="panggung-tahap"></span>
+          </div>
+          <div class="panggung-gagal">
+            <div>
+              <strong>Peramban ini belum bisa menampilkan animasi 3D.</strong>
+              <p style="margin-top: var(--space-2)">Bacaan dan dalil di bawah tetap bisa
+                dibaca seperti biasa.</p>
+            </div>
+          </div>
+          <div class="panggung-aksi">
+            <button type="button" id="btn-ulang" aria-label="Ulangi gerakan">
+              <svg class="ic" aria-hidden="true"><use href="#i-ulang"></use></svg>
+            </button>
+            <button type="button" id="btn-jeda" aria-label="Jeda gerakan">
+              <svg class="ic" aria-hidden="true"><use href="#i-jeda"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <p class="panggung-bantuan">
+          Geser mendatar di atas gambar untuk memutar sudut pandang.
+          Gerakannya diulang terus supaya bisa kamu perhatikan berkali-kali.
+        </p>
+
+        <!-- Pemilih rujukan: animasi menyesuaikan seketika -->
+        <div class="mazhab-bungkus">
+          <div class="mazhab-label">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+            Rujukan yang dipakai
+          </div>
+          <div class="mazhab" id="mazhab" role="group" aria-label="Pilih rujukan mazhab"></div>
+          <p class="mazhab-catatan">
+            Semua pilihan di atas berdalil. Kalau kamu belum punya pilihan,
+            pakai saja Syafi'i — mazhab yang paling banyak diikuti di Indonesia.
+          </p>
+        </div>
+
+        <div class="lihat-nav">
+          <button class="btn btn-ghost btn-sm" type="button" id="btn-prev">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kiri"></use></svg>
+            Sebelumnya
+          </button>
+          <button class="btn btn-ghost btn-sm" type="button" id="btn-next">
+            Berikutnya
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Kanan: hukum, bacaan, perbedaan, dalil -->
+      <div class="lihat-kanan">
+        <span class="badge" id="hukum-gerakan"></span>
+        <div id="isi"></div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        Situs ini alat bantu belajar, <strong>bukan pengganti guru</strong>. Kalau ada yang
+        masih membingungkan, tanyakan kepada ustadz atau ulama yang kamu percaya.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="rujukan.html">Semua rujukan</a> &nbsp;·&nbsp;
+        <a href="https://github.com/arnantoakbar/salat" target="_blank" rel="noopener noreferrer">Kode sumber di GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+      Kodenya terbuka — silakan diperiksa dan dikoreksi.<br>
+      Made with 🔥 in Indonesia
+    </div>
+  </div>
+</footer>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="js/tiga/rig.js?v=3"></script>
+<script src="js/tiga/pose.js?v=3"></script>
+<script src="js/tiga/kamera.js?v=3"></script>
+<script src="js/tiga/viewer.js?v=3"></script>
+<script src="data/dalil.js?v=3"></script>
+<script src="data/bacaan.js?v=3"></script>
+<script src="data/gerakan.js?v=3"></script>
+<script src="js/ui-dalil.js?v=3"></script>
+<script src="js/ui-gerakan.js?v=3"></script>
+<script src="js/ui-nav.js?v=3"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salat Lengkap — Salat by Flavida</title>
+<meta name="description" content="Lihat satu salat utuh dari takbiratul ihram sampai salam: Subuh, Zuhur, Asar, Maghrib, dan Isya, lengkap dengan bacaan dan dalil tiap gerakan.">
+<meta name="theme-color" content="#FFF8F0">
+<link rel="icon" href="assets/mark-color.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/tokens.css?v=3">
+<link rel="stylesheet" href="css/base.css?v=3">
+<link rel="stylesheet" href="css/app.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#utama">Lompat ke isi</a>
+
+<script src="js/sprite.js?v=3"></script>
+
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a class="nav-brand" href="index.html">
+      <img src="assets/mark-color.svg" alt="">
+      <span class="nav-brand-teks">
+        <span class="nav-brand-nama">Salat</span>
+        <span class="nav-brand-sub">by Flavida</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" id="nav-toggle"
+            aria-expanded="false" aria-controls="nav-menu" aria-label="Buka menu">
+      <span class="nav-toggle-garis"></span>
+    </button>
+    <div class="nav-menu" id="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="gerakan.html">Gerakan</a>
+      <a href="lengkap.html">Salat Lengkap</a>
+      <a href="persiapan.html">Persiapan</a>
+      <a href="dzikir.html">Dzikir</a>
+      <a href="rujukan.html">Rujukan</a>
+    </div>
+  </div>
+</nav>
+
+<main id="utama" class="section" style="padding-top: var(--space-8)">
+  <div class="wrap">
+
+    <div class="lihat-kepala">
+      <span class="overline">Salat lengkap</span>
+      <h1 class="flav-display-l">Satu salat utuh, dari takbir sampai salam.</h1>
+      <p class="flav-body" style="max-width: 62ch; margin-top: var(--space-3)">
+        Pilih waktu salatnya, lalu perhatikan rangkaiannya berjalan sendiri. Kamu juga bisa
+        meloncat ke langkah mana pun untuk mengulang bagian yang belum jelas.
+      </p>
+    </div>
+
+    <h2 class="sr-only">Pilih waktu salat</h2>
+    <div class="pilih-grid" id="waktu" style="margin-bottom: var(--space-6)"></div>
+
+    <p class="note" id="keterangan-waktu" style="margin-bottom: var(--space-6)"></p>
+
+    <div class="urutan-bungkus">
+      <h2 class="sr-only">Langkah salat</h2>
+      <div class="urutan" id="daftar-langkah" role="group" aria-label="Urutan langkah salat"></div>
+    </div>
+
+    <div class="lihat-grid">
+      <div class="lihat-kiri">
+        <div class="panggung" id="panggung">
+          <div class="panggung-label">
+            <span class="panggung-nama" id="panggung-nama"></span>
+            <span class="panggung-tahap" id="panggung-tahap"></span>
+          </div>
+          <div class="panggung-gagal">
+            <div>
+              <strong>Peramban ini belum bisa menampilkan animasi 3D.</strong>
+              <p style="margin-top: var(--space-2)">Urutan langkah, bacaan, dan dalilnya
+                tetap bisa dibaca.</p>
+            </div>
+          </div>
+          <div class="panggung-aksi">
+            <button type="button" id="btn-ulang" aria-label="Ulangi dari awal">
+              <svg class="ic" aria-hidden="true"><use href="#i-ulang"></use></svg>
+            </button>
+            <button type="button" id="btn-jeda" aria-label="Jeda">
+              <svg class="ic" aria-hidden="true"><use href="#i-jeda"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <p class="panggung-bantuan" id="kemajuan"></p>
+
+        <div class="mazhab-bungkus">
+          <div class="mazhab-label">
+            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kitab"></use></svg>
+            Rujukan yang dipakai
+          </div>
+          <div class="mazhab" id="mazhab" role="group" aria-label="Pilih rujukan mazhab"></div>
+          <p class="mazhab-catatan">
+            Rujukan ini juga menentukan hal-hal yang berbeda antar mazhab dalam salat
+            lengkap — misalnya ada tidaknya qunut Subuh dan cara duduk terakhirnya.
+          </p>
+        </div>
+      </div>
+
+      <div class="lihat-kanan">
+        <div id="isi"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-note">
+        Situs ini alat bantu belajar, <strong>bukan pengganti guru</strong>. Kalau ada yang
+        masih membingungkan, tanyakan kepada ustadz atau ulama yang kamu percaya.
+      </p>
+      <p style="margin-top: var(--space-4)">
+        <a href="rujukan.html">Semua rujukan</a> &nbsp;·&nbsp;
+        <a href="https://github.com/arnantoakbar/salat" target="_blank" rel="noopener noreferrer">Kode sumber di GitHub</a>
+      </p>
+    </div>
+    <div class="footer-made">
+      Kodenya terbuka — silakan diperiksa dan dikoreksi.<br>
+      Made with 🔥 in Indonesia
+    </div>
+  </div>
+</footer>
+
+<script src="js/vendor/three.min.js"></script>
+<script src="js/tiga/rig.js?v=3"></script>
+<script src="js/tiga/pose.js?v=3"></script>
+<script src="js/tiga/kamera.js?v=3"></script>
+<script src="js/tiga/viewer.js?v=3"></script>
+<script src="data/dalil.js?v=3"></script>
+<script src="data/bacaan.js?v=3"></script>
+<script src="data/gerakan.js?v=3"></script>
+<script src="data/rakaat.js?v=3"></script>
+<script src="js/ui-dalil.js?v=3"></script>
+<script src="js/ui-lengkap.js?v=3"></script>
+<script src="js/ui-nav.js?v=3"></script>
+</body>
+</html>

@@ -253,13 +253,19 @@
         { k: 'abudawud-730', sorot: 'rukuk' },
         { k: 'bukhari-757', sorot: 'rukuk' },
         { k: 'muslim-772', sorot: 'rukuk' },
-        { k: 'bukhari-735', sorot: 'rukuk' }
+        { k: 'bukhari-735', sorot: 'rukuk' },
+        { k: 'muslim-391', sorot: 'tiga' }
       ],
       varian: {
         syafii: { langkah: [
           { pose: 'sedekap-atas-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600 },
           { pose: 'angkat-bahu', tahap: 'Allahu akbar — tangan diangkat', gerak: 500, tahan: 700 },
           { pose: 'rukuk', tahap: 'Rukuk, punggung rata', gerak: 800, tahan: 2400 }
+        ], dalil: [
+          { k: 'bukhari-828', sorot: 'rukuk' },
+          { k: 'bukhari-735', sorot: 'rukuk' },
+          { k: 'muslim-391', sorot: 'tiga' },
+          { k: 'muslim-772', sorot: 'rukuk' }
         ] },
         hambali: { langkah: [
           { pose: 'sedekap-bawah-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600 },
