@@ -3,10 +3,12 @@
  * v1.0 · 2026 · flavida.co
  *
  * Fonts: Bricolage Grotesque (display) + DM Sans (body).
- * The @import below loads them automatically. For best performance, ALSO add a
- * matching <link rel="preconnect"> to fonts.gstatic.com in your <head>.
+ *
+ * Berbeda dengan berkas token aslinya, di sini hurufnya TIDAK diambil dari
+ * server Google. Situs ini berjanji tidak mengirim apa pun ke mana pun, dan
+ * memuat huruf dari pihak ketiga membocorkan alamat IP pembacanya. Berkas
+ * hurufnya disimpan sendiri — lihat css/font.css.
  */
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 /* ═══════════════════════════════════════════════════
    BASE COLOR TOKENS
