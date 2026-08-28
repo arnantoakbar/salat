@@ -9,3 +9,6 @@
 # Log & berkas sementara
 *.log
 tmp/
+
+# Konfigurasi peranti lokal
+.claude/
