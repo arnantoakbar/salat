@@ -56,8 +56,13 @@ penting, disebutkan di catatan.
 ## Cara kerjanya
 
 Situs ini **statis**: HTML, CSS, dan JavaScript biasa, tanpa framework dan tanpa proses
-build. Satu-satunya pustaka luar adalah [three.js](https://threejs.org) yang ikut disimpan
-di repo ini (`js/vendor/`), jadi tidak ada permintaan ke CDN mana pun saat halaman dibuka.
+build.
+
+**Tidak ada satu pun permintaan ke luar saat halaman dibuka.**
+[three.js](https://threejs.org) ikut disimpan di repo (`js/vendor/`), dan berkas hurufnya
+pun disimpan sendiri (`assets/font/`) alih-alih diambil dari Google Fonts — memuat huruf
+dari pihak ketiga akan membocorkan alamat IP pembaca, dan itu bertentangan dengan janji
+yang tertulis di setiap halaman situs ini.
 
 ```
 salat/
@@ -65,6 +70,7 @@ salat/
 ├── js/tiga/        mesin 3D: rig, pose, kamera, pemutar gerakan
 ├── js/ui-*.js      lapisan tampilan tiap halaman
 ├── css/            token desain Flavida, lapisan dasar, lapisan aplikasi
+├── assets/font/    huruf yang disimpan sendiri, tanpa panggilan ke luar
 └── docs/           skrip kurasi dalil dan skrip tangkapan layar
 ```
 
@@ -172,7 +178,8 @@ Kode: [MIT](LICENSE).
 
 Teks Al-Qur'an, hadits, dan terjemahannya bukan milik proyek ini — hak dan ketentuannya
 mengikuti sumbernya masing-masing (hadits.id, equran.id/Kementerian Agama). three.js
-memakai lisensi MIT (`js/vendor/three.LICENSE.md`).
+memakai lisensi MIT (`js/vendor/three.LICENSE.md`); Bricolage Grotesque dan DM Sans
+memakai SIL Open Font License 1.1.
 
 ---
 
