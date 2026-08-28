@@ -243,8 +243,8 @@
         'dan berhenti sebentar sampai badan tenang.',
       sorot: 'samping',
       langkah: [
-        { pose: 'sedekap-atas-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600 },
-        { pose: 'angkat-bahu', tahap: 'Allahu akbar — mengangkat tangan', gerak: 500, tahan: 700 },
+        { pose: 'sedekap-atas-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600, sorot: 'penuh-samping' },
+        { pose: 'angkat-bahu', tahap: 'Allahu akbar — mengangkat tangan', gerak: 500, tahan: 700, sorot: 'penuh-samping' },
         { pose: 'rukuk', tahap: 'Rukuk, punggung rata', gerak: 800, tahan: 2400 }
       ],
       bacaan: ['takbir', 'tasbih-rukuk'],
@@ -258,8 +258,8 @@
       ],
       varian: {
         syafii: { langkah: [
-          { pose: 'sedekap-atas-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600 },
-          { pose: 'angkat-bahu', tahap: 'Allahu akbar — tangan diangkat', gerak: 500, tahan: 700 },
+          { pose: 'sedekap-atas-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600, sorot: 'penuh-samping' },
+          { pose: 'angkat-bahu', tahap: 'Allahu akbar — tangan diangkat', gerak: 500, tahan: 700, sorot: 'penuh-samping' },
           { pose: 'rukuk', tahap: 'Rukuk, punggung rata', gerak: 800, tahan: 2400 }
         ], dalil: [
           { k: 'bukhari-828', sorot: 'rukuk' },
@@ -268,12 +268,12 @@
           { k: 'muslim-772', sorot: 'rukuk' }
         ] },
         hambali: { langkah: [
-          { pose: 'sedekap-bawah-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600 },
-          { pose: 'angkat-bahu', tahap: 'Allahu akbar — tangan diangkat', gerak: 500, tahan: 700 },
+          { pose: 'sedekap-bawah-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 600, sorot: 'penuh-samping' },
+          { pose: 'angkat-bahu', tahap: 'Allahu akbar — tangan diangkat', gerak: 500, tahan: 700, sorot: 'penuh-samping' },
           { pose: 'rukuk', tahap: 'Rukuk, punggung rata', gerak: 800, tahan: 2400 }
         ] },
         hanafi: { langkah: [
-          { pose: 'sedekap-bawah-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 700 },
+          { pose: 'sedekap-bawah-pusar', tahap: 'Selesai membaca', gerak: 500, tahan: 700, sorot: 'penuh-samping' },
           { pose: 'rukuk', tahap: 'Allahu akbar — langsung rukuk', gerak: 900, tahan: 2400 }
         ], dalil: [
           { k: 'bukhari-828', sorot: 'rukuk' },
@@ -281,7 +281,7 @@
           { k: 'muslim-772', sorot: 'rukuk' }
         ] },
         maliki: { langkah: [
-          { pose: 'berdiri', tahap: 'Selesai membaca', gerak: 500, tahan: 700 },
+          { pose: 'berdiri', tahap: 'Selesai membaca', gerak: 500, tahan: 700, sorot: 'penuh-samping' },
           { pose: 'rukuk', tahap: 'Allahu akbar — langsung rukuk', gerak: 900, tahan: 2400 }
         ], dalil: [
           { k: 'bukhari-828', sorot: 'rukuk' },
@@ -315,7 +315,7 @@
         'turun sujud.',
       sorot: 'penuh-samping',
       langkah: [
-        { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600 },
+        { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600, sorot: 'samping' },
         { pose: 'angkat-bahu', tahap: "Sami'allahu liman hamidah", gerak: 600, tahan: 800 },
         { pose: 'itidal', tahap: 'Berdiri tegak dan tenang', gerak: 600, tahan: 2200 }
       ],
@@ -328,11 +328,11 @@
       ],
       varian: {
         hanafi: { langkah: [
-          { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600 },
+          { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600, sorot: 'samping' },
           { pose: 'itidal', tahap: "Sami'allahu liman hamidah — berdiri tegak", gerak: 800, tahan: 2400 }
         ] },
         maliki: { langkah: [
-          { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600 },
+          { pose: 'rukuk', tahap: 'Masih rukuk', gerak: 500, tahan: 600, sorot: 'samping' },
           { pose: 'itidal', tahap: "Sami'allahu liman hamidah — berdiri tegak", gerak: 800, tahan: 2400 }
         ] }
       },
@@ -362,7 +362,7 @@
         'hidung, dua telapak tangan, dua lutut, dan ujung jari kedua kaki.',
       sorot: 'samping-rendah',
       langkah: [
-        { pose: 'itidal', tahap: 'Berdiri tegak', gerak: 500, tahan: 600 },
+        { pose: 'itidal', tahap: 'Berdiri tegak', gerak: 500, tahan: 600, sorot: 'penuh-samping' },
         { pose: 'turun-lutut', tahap: 'Allahu akbar — turun, lutut lebih dulu', gerak: 700, tahan: 500 },
         { pose: 'sujud', tahap: 'Sujud dengan tujuh anggota badan', gerak: 700, tahan: 2600 }
       ],
@@ -379,7 +379,7 @@
       ],
       varian: {
         maliki: { langkah: [
-          { pose: 'itidal', tahap: 'Berdiri tegak', gerak: 500, tahan: 600 },
+          { pose: 'itidal', tahap: 'Berdiri tegak', gerak: 500, tahan: 600, sorot: 'penuh-samping' },
           { pose: 'turun-tangan', tahap: 'Allahu akbar — turun, tangan lebih dulu', gerak: 750, tahan: 500 },
           { pose: 'sujud', tahap: 'Sujud dengan tujuh anggota badan', gerak: 650, tahan: 2600 }
         ] }
@@ -413,9 +413,9 @@
         'sujud sekali lagi.',
       sorot: 'duduk',
       langkah: [
-        { pose: 'sujud', tahap: 'Sujud pertama', gerak: 500, tahan: 700 },
+        { pose: 'sujud', tahap: 'Sujud pertama', gerak: 500, tahan: 700, sorot: 'samping-rendah' },
         { pose: 'duduk-iftirasy', tahap: 'Allahu akbar — duduk tenang', gerak: 750, tahan: 2400 },
-        { pose: 'sujud', tahap: 'Allahu akbar — sujud kedua', gerak: 750, tahan: 1600 }
+        { pose: 'sujud', tahap: 'Allahu akbar — sujud kedua', gerak: 750, tahan: 1600, sorot: 'samping-rendah' }
       ],
       bacaan: ['takbir', 'antara-sujud'],
       dalil: [
@@ -442,10 +442,10 @@
       ringkas: 'Setelah sujud kedua, berdiri lagi untuk rakaat berikutnya sambil bertakbir.',
       sorot: 'penuh-samping',
       langkah: [
-        { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700 },
+        { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700, sorot: 'samping-rendah' },
         { pose: 'duduk-iftirasy', tahap: 'Duduk istirahat sejenak', gerak: 650, tahan: 1100 },
         { pose: 'jongkok', tahap: 'Bertumpu untuk berdiri', gerak: 550, tahan: 500 },
-        { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600 }
+        { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600, sorot: 'penuh-samping' }
       ],
       bacaan: ['takbir'],
       dalil: [
@@ -454,19 +454,19 @@
       ],
       varian: {
         hanafi: { langkah: [
-          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700 },
+          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700, sorot: 'samping-rendah' },
           { pose: 'jongkok', tahap: 'Langsung bangkit', gerak: 650, tahan: 500 },
-          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600 }
+          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600, sorot: 'penuh-samping' }
         ] },
         maliki: { langkah: [
-          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700 },
+          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700, sorot: 'samping-rendah' },
           { pose: 'jongkok', tahap: 'Langsung bangkit', gerak: 650, tahan: 500 },
-          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600 }
+          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600, sorot: 'penuh-samping' }
         ] },
         hambali: { langkah: [
-          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700 },
+          { pose: 'sujud', tahap: 'Sujud kedua', gerak: 500, tahan: 700, sorot: 'samping-rendah' },
           { pose: 'jongkok', tahap: 'Langsung bangkit', gerak: 650, tahan: 500 },
-          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600 }
+          { pose: 'berdiri', tahap: 'Allahu akbar — berdiri lagi', gerak: 700, tahan: 1600, sorot: 'penuh-samping' }
         ] }
       },
       beda: {
@@ -494,7 +494,7 @@
         'sambil mengangkat telunjuk kanan, lalu berdiri lagi.',
       sorot: 'duduk',
       langkah: [
-        { pose: 'sujud', tahap: 'Selesai sujud kedua', gerak: 500, tahan: 600 },
+        { pose: 'sujud', tahap: 'Selesai sujud kedua', gerak: 500, tahan: 600, sorot: 'samping-rendah' },
         { pose: 'duduk-iftirasy', tahap: 'Duduk iftirasy', gerak: 750, tahan: 1200 },
         { pose: 'tasyahud-iftirasy', tahap: 'Membaca tasyahud, telunjuk diangkat', gerak: 600, tahan: 2600 }
       ],
@@ -508,7 +508,7 @@
       ],
       varian: {
         maliki: { langkah: [
-          { pose: 'sujud', tahap: 'Selesai sujud kedua', gerak: 500, tahan: 600 },
+          { pose: 'sujud', tahap: 'Selesai sujud kedua', gerak: 500, tahan: 600, sorot: 'samping-rendah' },
           { pose: 'duduk-tawarruk', tahap: 'Duduk tawarruk', gerak: 800, tahan: 1200 },
           { pose: 'tasyahud-tawarruk', tahap: 'Membaca tasyahud, telunjuk diangkat', gerak: 600, tahan: 2600 }
         ] }
@@ -539,7 +539,7 @@
         'doa memohon perlindungan.',
       sorot: 'duduk',
       langkah: [
-        { pose: 'sujud', tahap: 'Selesai sujud terakhir', gerak: 500, tahan: 600 },
+        { pose: 'sujud', tahap: 'Selesai sujud terakhir', gerak: 500, tahan: 600, sorot: 'samping-rendah' },
         { pose: 'duduk-tawarruk', tahap: 'Duduk tawarruk', gerak: 800, tahan: 1100 },
         { pose: 'tasyahud-tawarruk', tahap: 'Tasyahud, salawat, lalu doa', gerak: 600, tahan: 3000 }
       ],
@@ -554,7 +554,7 @@
       ],
       varian: {
         hanafi: { langkah: [
-          { pose: 'sujud', tahap: 'Selesai sujud terakhir', gerak: 500, tahan: 600 },
+          { pose: 'sujud', tahap: 'Selesai sujud terakhir', gerak: 500, tahan: 600, sorot: 'samping-rendah' },
           { pose: 'duduk-iftirasy', tahap: 'Duduk iftirasy', gerak: 800, tahan: 1100 },
           { pose: 'tasyahud-iftirasy', tahap: 'Tasyahud, salawat, lalu doa', gerak: 600, tahan: 3000 }
         ] }
@@ -635,7 +635,7 @@
       sorot: 'perut',
       opsional: true,
       langkah: [
-        { pose: 'itidal', tahap: "I'tidal rakaat kedua", gerak: 600, tahan: 800 },
+        { pose: 'itidal', tahap: "I'tidal rakaat kedua", gerak: 600, tahan: 800, sorot: 'penuh-samping' },
         { pose: 'qunut', tahap: 'Menengadahkan tangan, membaca qunut', gerak: 750, tahan: 3000 }
       ],
       bacaan: [],

@@ -112,6 +112,10 @@
           pastikan(POSE_ADA.indexOf(l.pose) >= 0,
             g.id + '/' + m + ': pose tidak dikenal — ' + l.pose);
           pastikan(l.tahap, g.id + '/' + m + ': ada langkah tanpa keterangan tahap');
+          if (l.sorot) {
+            pastikan(SOROT_ADA.indexOf(l.sorot) >= 0,
+              g.id + '/' + m + ': sudut kamera langkah tidak dikenal — ' + l.sorot);
+          }
         });
         pastikan(SOROT_ADA.indexOf(b.sorot) >= 0,
           g.id + '/' + m + ': sudut kamera tidak dikenal — ' + b.sorot);
