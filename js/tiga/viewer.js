@@ -299,9 +299,15 @@
     };
     this._fase = 'gerak';
     this._t = 0;
-    // Perpindahan dari luar (ganti gerakan/mazhab) diberi durasi sendiri
-    // supaya terasa "menyesuaikan", bukan memulai ulang.
-    this._durasi = KURANG_GERAK ? 1 : (dariLuar ? 620 : (langkah.gerak || 700));
+    /*
+     * Lama perpindahan. Durasi yang ditulis pada langkahnya selalu menang —
+     * termasuk ketika perpindahan datang dari luar (ganti gerakan atau ganti
+     * mazhab); tanpa itu, langkah yang sengaja dibuat seketika akan tetap
+     * dianimasikan dan sikap yang ingin ditahan tidak pernah tercapai.
+     * Angka 620 hanya bekal untuk perpindahan dari luar yang tidak menyebut
+     * durasinya, supaya terasa "menyesuaikan" dan bukan memulai ulang.
+     */
+    this._durasi = KURANG_GERAK ? 1 : (langkah.gerak || (dariLuar ? 620 : 700));
 
     this.kamera.sorot(langkah.sorot || this._sorotBaku);
     this._poseKini = langkah.pose;

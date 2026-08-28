@@ -40,16 +40,22 @@
     var p = new URLSearchParams(location.search);
     var g = p.get('g');
     var m = p.get('m');
+    var l = parseInt(p.get('langkah'), 10);
     return {
       gerakan: window.cariGerakan(g) ? g : DAFTAR[0].id,
-      mazhab: window.MAZHAB[m] ? m : 'syafii'
+      mazhab: window.MAZHAB[m] ? m : 'syafii',
+      // Menahan peragaan pada satu langkah, misalnya ?langkah=2. Berguna
+      // untuk menunjuk sikap tertentu saat melaporkan sudut badan yang
+      // keliru, dan untuk mengambil gambar diam ke dokumentasi.
+      langkah: isFinite(l) && l >= 0 ? l : null
     };
   }
 
   var kini = bacaAlamat();
 
   function tulisAlamat(ganti) {
-    var url = 'gerakan.html?g=' + kini.gerakan + '&m=' + kini.mazhab;
+    var url = 'gerakan.html?g=' + kini.gerakan + '&m=' + kini.mazhab +
+      (kini.langkah !== null ? '&langkah=' + kini.langkah : '');
     if (ganti) history.replaceState(kini, '', url);
     else history.pushState(kini, '', url);
   }
@@ -63,7 +69,20 @@
   function jalankan() {
     var g = bentukKini();
     elNama.textContent = g.nama;
-    if (viewer && viewer.siap) viewer.setLangkah(g.langkah, g.sorot);
+    if (!viewer || !viewer.siap) return;
+
+    if (kini.langkah !== null && g.langkah[kini.langkah]) {
+      // Satu langkah saja, ditahan lama: peragaan berhenti di sikap itu.
+      // Perpindahannya dibuat sesingkat mungkin — yang ingin dilihat adalah
+      // sikap akhirnya, bukan ayunan menuju ke sana.
+      var l = g.langkah[kini.langkah];
+      viewer.setLangkah([{
+        pose: l.pose, tahap: l.tahap, gerak: 1, tahan: 3600000,
+        sorot: l.sorot || g.sorot
+      }], g.sorot);
+    } else {
+      viewer.setLangkah(g.langkah, g.sorot);
+    }
   }
 
   /* ── Panel kanan ─────────────────────────────────────────────── */
