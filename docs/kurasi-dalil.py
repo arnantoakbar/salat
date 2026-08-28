@@ -48,6 +48,10 @@ def js(v, indent=2):
 # ─────────────────────────────────────────────────────────────────
 
 HADITS_DIPAKAI = [
+    ('bukhari-1', 'HR Bukhari no. 1', 'Dari Umar bin Al-Khattab',
+     'Setiap amal dinilai dari niatnya. Inilah dasar bahwa salat harus diniatkan, dan niat itu tempatnya di hati.',
+     {'niat': 'Sesungguhnya amal itu tergantung pada niat'}),
+
     ('bukhari-631', 'HR Bukhari no. 631', 'Dari Malik bin Al-Huwairits',
      'Perintah Nabi agar salat dikerjakan persis seperti yang beliau contohkan. Inilah alasan setiap gerakan di situs ini harus punya dalil.',
      {'ikut': 'Shalatlah seperti yang kalian lihat aku shalat'}),

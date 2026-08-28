@@ -34,6 +34,19 @@
   'use strict';
 
   root.DALIL = {
+  "bukhari-1": {
+    "jenis": "hadits",
+    "rujukan": "HR Bukhari no. 1",
+    "perawi": "Dari Umar bin Al-Khattab",
+    "derajat": "Shahih",
+    "ringkas": "Setiap amal dinilai dari niatnya. Inilah dasar bahwa salat harus diniatkan, dan niat itu tempatnya di hati.",
+    "arab": "حَدَّثَنَا الْحُمَيْدِيُّ عَبْدُ اللَّهِ بْنُ الزُّبَيْرِ ، قَالَ : حَدَّثَنَا سُفْيَانُ ، قَالَ : حَدَّثَنَا يَحْيَى بْنُ سَعِيدٍ الْأَنْصَارِيُّ ، قَالَ : أَخْبَرَنِي مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ ، أَنَّهُ سَمِعَ عَلْقَمَةَ بْنَ وَقَّاصٍ اللَّيْثِيَّ ، يَقُولُ : سَمِعْتُ عُمَرَ بْنَ الْخَطَّابِ رَضِيَ اللَّهُ عَنْهُ عَلَى الْمِنْبَرِ، قَالَ : سَمِعْتُ رَسُولَ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، يَقُولُ : \" إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى، فَمَنْ كَانَتْ هِجْرَتُهُ إِلَى دُنْيَا يُصِيبُهَا أَوْ إِلَى امْرَأَةٍ يَنْكِحُهَا، فَهِجْرَتُهُ إِلَى مَا هَاجَرَ إِلَيْهِ \"",
+    "terjemah": "Dari Umar bin Al-Khattab: Saya mendengar Rasulullah ﷺ bersabda, \"Sesungguhnya amal itu tergantung pada niat, dan setiap orang akan mendapatkan balasan sesuai dengan apa yang ia niatkan. Maka barangsiapa yang hijrahnya untuk mendapatkan keuntungan duniawi atau untuk seorang wanita yang ingin dinikahinya, maka hijrahnya adalah untuk apa yang ia hijrahkan.\"",
+    "tautan": "https://www.hadits.id/hadits/bukhari/1",
+    "sorot": {
+      "niat": "Sesungguhnya amal itu tergantung pada niat"
+    }
+  },
   "bukhari-631": {
     "jenis": "hadits",
     "rujukan": "HR Bukhari no. 631",
