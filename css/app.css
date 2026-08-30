@@ -144,7 +144,10 @@
 /* Rasio dijaga lewat padding supaya tinggi kanvas stabil sebelum JS jalan. */
 .panggung::before { content: ""; display: block; padding-top: 112%; }
 @media (min-width: 640px)  { .panggung::before { padding-top: 88%; } }
-@media (min-width: 1024px) { .panggung::before { padding-top: 106%; } }
+/* Di layar lebar panggung menempel bersama pemilih mazhab, jadi rasionya
+   ditahan pendek: kolomnya harus muat utuh dalam satu layar, kalau tidak
+   bagian bawahnya jadi tidak terjangkau. */
+@media (min-width: 1024px) { .panggung::before { padding-top: 82%; } }
 
 .panggung canvas {
   position: absolute;
@@ -167,14 +170,22 @@
   gap: var(--space-3);
   pointer-events: none;
 }
+/* Nama gerakan tidak boleh membungkus: di layar sempit barisnya jatuh ke
+   tengah panggung dan menabrak modelnya. Keterangan tahap yang pendek
+   diberi prioritas ruang karena ia yang berubah-ubah. */
 .panggung-nama {
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-snug);
   color: var(--fg1);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .panggung-tahap {
+  flex: none;
   font-size: var(--text-micro);
   font-weight: var(--fw-bold);
   letter-spacing: var(--ls-wider);
@@ -195,7 +206,7 @@
   gap: var(--space-2);
 }
 .panggung-aksi button {
-  width: 40px; height: 40px;
+  width: 44px; height: 44px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -236,7 +247,7 @@
 }
 .mazhab button {
   flex: 1;
-  min-height: 40px;
+  min-height: 44px;
   padding: 0 var(--space-3);
   border-radius: var(--radius-pill);
   font-size: var(--text-label);
@@ -274,7 +285,7 @@
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  min-height: 42px;
+  min-height: 44px;
   padding: 0 var(--space-4) 0 var(--space-2);
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-default);
@@ -616,7 +627,21 @@
     gap: var(--space-8);
     align-items: start;
   }
-  .lihat-kiri { position: sticky; top: 76px; }
+  /*
+   * Kolom kiri menempel saat panel kanan digulir. Tingginya WAJIB dibatasi
+   * setinggi layar: elemen sticky yang lebih tinggi dari ruang yang tersedia
+   * akan terpaku di atas dan bagian bawahnya tidak pernah bisa dijangkau,
+   * sejauh apa pun halaman digulir. Sebelum batas ini ada, pemilih mazhab
+   * terpotong dan tombol pindah gerakan mustahil ditekan.
+   */
+  .lihat-kiri {
+    position: sticky;
+    top: 76px;
+    max-height: calc(100vh - 76px - var(--space-6));
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding-right: var(--space-1);
+  }
 }
 
 .lihat-kanan { display: grid; gap: var(--space-4); min-width: 0; }
@@ -624,14 +649,104 @@
    seperti item grid lain di kolom ini. */
 .lihat-kanan > .badge { justify-self: start; }
 
-.lihat-nav {
+/* ═══════════════════════════════════════════════════
+   NAVIGASI MENGAMBANG
+   Pindah gerakan harus bisa dilakukan dari posisi baca mana pun —
+   termasuk saat panggung sudah tergulir jauh ke atas. Perlakuannya
+   meniru bar navigasi atas (krem tembus pandang + blur + garis tepi),
+   bukan bayangan baru, supaya tidak menambah pengecualian pada
+   aturan "rata sampai disentuh".
+   ═══════════════════════════════════════════════════ */
+
+.apung {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: max(var(--space-4), env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  width: min(560px, calc(100% - var(--space-8)));
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
+  gap: var(--space-2);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 248, 240, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-default);
 }
-.lihat-nav .btn { flex: 1; }
+
+/*
+ * Di layar lebar bar ditambatkan ke kolom bacaan, bukan ke tengah layar.
+ * Kolom kiri menempel dan tidak ikut bergulir, jadi bar yang melayang di
+ * tengah akan duduk permanen di atas panggung dan pemilih mazhab —
+ * mengulang persis masalah yang bar ini seharusnya selesaikan.
+ */
+@media (min-width: 1024px) {
+  .apung {
+    left: auto;
+    transform: none;
+    right: max(var(--space-8), calc((100vw - 1120px) / 2 + var(--space-8)));
+    width: 420px;
+  }
+}
+
+.apung-tombol {
+  flex: none;
+  width: 48px; height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--fg1);
+  transition: var(--transition-base);
+}
+.apung-tombol:hover { background: var(--color-flame-tint-sm); color: var(--color-flame); }
+.apung-tombol:disabled { opacity: 0.3; }
+
+/* Bagian tengah menyebutkan posisi dan nama gerakan; mengetuknya
+   membawa pandangan kembali ke panggung. */
+.apung-kini {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  transition: var(--transition-base);
+}
+.apung-kini:hover { background: rgba(17, 17, 17, 0.04); }
+
+.apung-posisi {
+  font-size: var(--text-micro);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--color-ember);
+}
+.apung-nama {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg1);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Ruang supaya isi terakhir halaman tidak tertutup bar mengambang —
+   termasuk kaki halaman, yang berada di luar <main>. */
+.beri-ruang-apung { padding-bottom: var(--space-10); }
+.beri-ruang-apung ~ .footer { padding-bottom: 104px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .apung { transition: none; }
+}
 
 /* ═══════════════════════════════════════════════════
    ANIMASI DEMO BERANDA (pola waris)
@@ -1044,3 +1159,19 @@ mark.ayat-sorot {
 .uji-baris .badge { flex: none; min-width: 62px; justify-content: center; }
 .uji-baris strong { font-size: var(--text-body-s); }
 .uji-baris p { font-size: var(--text-caption); color: var(--fg2); margin-top: 2px; }
+
+/* Konteks WebGL hilang — di ponsel biasanya karena aplikasi lama di latar
+   belakang. Gambarnya berhenti, jadi katakan apa adanya alih-alih
+   meninggalkan kotak kosong. */
+.panggung.konteks-hilang::after {
+  content: "Gambar 3D berhenti sebentar. Muat ulang halaman kalau tidak kembali sendiri.";
+  position: absolute;
+  inset: auto var(--space-5) var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-card);
+  background: rgba(255, 248, 240, 0.94);
+  border: 1px solid var(--border-default);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--fg2);
+}

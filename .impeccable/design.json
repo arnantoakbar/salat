@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T23:34:45Z",
+  "title": "Design System: Salat by Flavida",
+  "extensions": {
+    "colorMeta": {
+      "flame": {
+        "role": "primary",
+        "displayName": "Flame Red",
+        "canonical": "oklch(61.1% 0.215 31.8)",
+        "tonalRamp": [
+          "oklch(15.0% 0.215 31.8)",
+          "oklch(26.4% 0.215 31.8)",
+          "oklch(37.9% 0.215 31.8)",
+          "oklch(49.3% 0.215 31.8)",
+          "oklch(60.7% 0.215 31.8)",
+          "oklch(72.1% 0.215 31.8)",
+          "oklch(83.6% 0.215 31.8)",
+          "oklch(95.0% 0.215 31.8)"
+        ]
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Fire Orange",
+        "canonical": "oklch(70.3% 0.182 50.5)",
+        "tonalRamp": [
+          "oklch(15.0% 0.182 50.5)",
+          "oklch(26.4% 0.182 50.5)",
+          "oklch(37.9% 0.182 50.5)",
+          "oklch(49.3% 0.182 50.5)",
+          "oklch(60.7% 0.182 50.5)",
+          "oklch(72.1% 0.182 50.5)",
+          "oklch(83.6% 0.182 50.5)",
+          "oklch(95.0% 0.182 50.5)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Amber Gold",
+        "canonical": "oklch(78.4% 0.159 73.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.159 73.0)",
+          "oklch(26.4% 0.159 73.0)",
+          "oklch(37.9% 0.159 73.0)",
+          "oklch(49.3% 0.159 73.0)",
+          "oklch(60.7% 0.159 73.0)",
+          "oklch(72.1% 0.159 73.0)",
+          "oklch(83.6% 0.159 73.0)",
+          "oklch(95.0% 0.159 73.0)"
+        ]
+      },
+      "ember": {
+        "role": "secondary",
+        "displayName": "Ember",
+        "canonical": "oklch(48.1% 0.148 34.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.148 34.6)",
+          "oklch(26.4% 0.148 34.6)",
+          "oklch(37.9% 0.148 34.6)",
+          "oklch(49.3% 0.148 34.6)",
+          "oklch(60.7% 0.148 34.6)",
+          "oklch(72.1% 0.148 34.6)",
+          "oklch(83.6% 0.148 34.6)",
+          "oklch(95.0% 0.148 34.6)"
+        ]
+      },
+      "canopy-green": {
+        "role": "tertiary",
+        "displayName": "Canopy Green",
+        "canonical": "oklch(43.0% 0.089 156.4)",
+        "tonalRamp": [
+          "oklch(15.0% 0.089 156.4)",
+          "oklch(26.4% 0.089 156.4)",
+          "oklch(37.9% 0.089 156.4)",
+          "oklch(49.3% 0.089 156.4)",
+          "oklch(60.7% 0.089 156.4)",
+          "oklch(72.1% 0.089 156.4)",
+          "oklch(83.6% 0.089 156.4)",
+          "oklch(95.0% 0.089 156.4)"
+        ]
+      },
+      "derajat-lemah": {
+        "role": "tertiary",
+        "displayName": "Derajat Lemah",
+        "canonical": "oklch(50.8% 0.108 73.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.108 73.3)",
+          "oklch(26.4% 0.108 73.3)",
+          "oklch(37.9% 0.108 73.3)",
+          "oklch(49.3% 0.108 73.3)",
+          "oklch(60.7% 0.108 73.3)",
+          "oklch(72.1% 0.108 73.3)",
+          "oklch(83.6% 0.108 73.3)",
+          "oklch(95.0% 0.108 73.3)"
+        ]
+      },
+      "charcoal": {
+        "role": "neutral",
+        "displayName": "Deep Charcoal",
+        "canonical": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "mid-grey": {
+        "role": "neutral",
+        "displayName": "Mid Grey",
+        "canonical": "oklch(45.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "light-grey": {
+        "role": "neutral",
+        "displayName": "Light Grey",
+        "canonical": "oklch(68.3% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Warm Cream",
+        "canonical": "oklch(98.2% 0.013 71.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.013 71.3)",
+          "oklch(26.4% 0.013 71.3)",
+          "oklch(37.9% 0.013 71.3)",
+          "oklch(49.3% 0.013 71.3)",
+          "oklch(60.7% 0.013 71.3)",
+          "oklch(72.1% 0.013 71.3)",
+          "oklch(83.6% 0.013 71.3)",
+          "oklch(95.0% 0.013 71.3)"
+        ]
+      },
+      "parchment": {
+        "role": "neutral",
+        "displayName": "Parchment",
+        "canonical": "oklch(96.3% 0.027 69.3)",
+        "tonalRamp": [
+          "oklch(15.0% 0.027 69.3)",
+          "oklch(26.4% 0.027 69.3)",
+          "oklch(37.9% 0.027 69.3)",
+          "oklch(49.3% 0.027 69.3)",
+          "oklch(60.7% 0.027 69.3)",
+          "oklch(72.1% 0.027 69.3)",
+          "oklch(83.6% 0.027 69.3)",
+          "oklch(95.0% 0.027 69.3)"
+        ]
+      },
+      "surface-card": {
+        "role": "neutral",
+        "displayName": "Surface Card",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 89.9)",
+          "oklch(26.4% 0.000 89.9)",
+          "oklch(37.9% 0.000 89.9)",
+          "oklch(49.3% 0.000 89.9)",
+          "oklch(60.7% 0.000 89.9)",
+          "oklch(72.1% 0.000 89.9)",
+          "oklch(83.6% 0.000 89.9)",
+          "oklch(95.0% 0.000 89.9)"
+        ]
+      },
+      "grafit": {
+        "role": "neutral",
+        "displayName": "Grafit",
+        "canonical": "oklch(39.9% 0.019 306.0)",
+        "tonalRamp": [
+          "oklch(15.0% 0.019 306.0)",
+          "oklch(26.4% 0.019 306.0)",
+          "oklch(37.9% 0.019 306.0)",
+          "oklch(49.3% 0.019 306.0)",
+          "oklch(60.7% 0.019 306.0)",
+          "oklch(72.1% 0.019 306.0)",
+          "oklch(83.6% 0.019 306.0)",
+          "oklch(95.0% 0.019 306.0)"
+        ]
+      },
+      "grafit-garis": {
+        "role": "neutral",
+        "displayName": "Grafit Garis",
+        "canonical": "oklch(34.1% 0.018 303.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.018 303.6)",
+          "oklch(26.4% 0.018 303.6)",
+          "oklch(37.9% 0.018 303.6)",
+          "oklch(49.3% 0.018 303.6)",
+          "oklch(60.7% 0.018 303.6)",
+          "oklch(72.1% 0.018 303.6)",
+          "oklch(83.6% 0.018 303.6)",
+          "oklch(95.0% 0.018 303.6)"
+        ]
+      },
+      "kertas-sketsa": {
+        "role": "neutral",
+        "displayName": "Kertas Sketsa",
+        "canonical": "oklch(99.4% 0.007 88.6)",
+        "tonalRamp": [
+          "oklch(15.0% 0.007 88.6)",
+          "oklch(26.4% 0.007 88.6)",
+          "oklch(37.9% 0.007 88.6)",
+          "oklch(49.3% 0.007 88.6)",
+          "oklch(60.7% 0.007 88.6)",
+          "oklch(72.1% 0.007 88.6)",
+          "oklch(83.6% 0.007 88.6)",
+          "oklch(95.0% 0.007 88.6)"
+        ]
+      },
+      "kertas-sketsa-dasar": {
+        "role": "neutral",
+        "displayName": "Kertas Sketsa Dasar",
+        "canonical": "oklch(98.2% 0.015 77.1)",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 77.1)",
+          "oklch(26.4% 0.015 77.1)",
+          "oklch(37.9% 0.015 77.1)",
+          "oklch(49.3% 0.015 77.1)",
+          "oklch(60.7% 0.015 77.1)",
+          "oklch(72.1% 0.015 77.1)",
+          "oklch(83.6% 0.015 77.1)",
+          "oklch(95.0% 0.015 77.1)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Judul hero, satu per halaman."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Judul bagian."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Judul kartu dan blok."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Teks isi; lebar baris dibatasi 60-64ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Overline, lencana, penanda tahap. Selalu huruf besar."
+      },
+      "arabic": {
+        "displayName": "Arabic",
+        "purpose": "Bacaan salat pada kartu bacaan. Tidak pernah di bawah 26px di sini."
+      },
+      "arabic-dalil": {
+        "displayName": "Arabic Dalil",
+        "purpose": "Teks Arab di dalam kutipan dalil, memuat sanad panjang."
+      }
+    },
+    "shadows": [
+      {
+        "name": "kartu-hover",
+        "value": "0 4px 32px rgba(232, 57, 29, 0.08)",
+        "purpose": "Angkatan lembut berwarna merah samar saat kartu di-hover, dipasangkan translateY(-4px)."
+      },
+      {
+        "name": "tombol-hover",
+        "value": "0 8px 24px rgba(232, 57, 29, 0.3)",
+        "purpose": "Nyala hangat di bawah tombol utama saat hover, dipasangkan translateY(-2px)."
+      },
+      {
+        "name": "pilihan-aktif",
+        "value": "0 2px 10px rgba(17, 17, 17, 0.18)",
+        "purpose": "Bayangan pendek netral untuk tombol mazhab yang sedang dipilih."
+      },
+      {
+        "name": "panggung",
+        "value": "0 4px 32px rgba(232, 57, 29, 0.08)",
+        "purpose": "Satu-satunya bayangan tetap di situs: panggung 3D adalah lembar kertas di atas halaman."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-default",
+        "value": "ease",
+        "purpose": "Satu-satunya easing; tidak ada pantulan atau pegas."
+      },
+      {
+        "name": "duration-fast",
+        "value": "0.15s",
+        "purpose": "Perubahan warna teks dan tautan."
+      },
+      {
+        "name": "duration-base",
+        "value": "0.2s",
+        "purpose": "Transformasi, bayangan, dan warna latar komponen."
+      },
+      {
+        "name": "duration-slow",
+        "value": "0.35s",
+        "purpose": "Masuknya panel dan pergantian bagian."
+      },
+      {
+        "name": "transition-base",
+        "value": "transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease, color .15s ease",
+        "purpose": "Transisi baku semua komponen interaktif."
+      },
+      {
+        "name": "pose-crossfade",
+        "value": "620ms (ganti gerakan/mazhab), 500-800ms (antar langkah)",
+        "purpose": "Perpindahan pose 3D memakai slerp quaternion dari sikap yang sedang terlihat, tidak memulai ulang."
+      },
+      {
+        "name": "boiling-line",
+        "value": "~140ms",
+        "purpose": "Benih noise garis tepi model diperbarui, membuat konturnya bergetar seperti coretan tangan. Mati saat prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "chip-sempit",
+        "value": "420px"
+      },
+      {
+        "name": "nav-runtuh",
+        "value": "767px"
+      },
+      {
+        "name": "grid-tiga",
+        "value": "640px"
+      },
+      {
+        "name": "lega",
+        "value": "768px"
+      },
+      {
+        "name": "batasan-dua-kolom",
+        "value": "860px"
+      },
+      {
+        "name": "hero-dua-kolom",
+        "value": "900px"
+      },
+      {
+        "name": "terbuka-dua-kolom",
+        "value": "940px"
+      },
+      {
+        "name": "gerakan-dua-kolom",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ajakan utama satu per layar — 'Lihat Gerakan', 'Mulai'.",
+      "html": "<button class=\"ds-btn-primary\">Lihat Gerakan</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:100px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .15s ease,border-color .2s ease;background:var(--color-flame,#E8391D);color:var(--color-cream,#FFF8F0);}.ds-btn-primary:hover{background:var(--color-orange,#F5760A);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,57,29,.3);}.ds-btn-primary:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Ajakan sekunder yang tetap harus kuat, misalnya tautan ke GitHub.",
+      "html": "<button class=\"ds-btn-dark\">Lihat kodenya di GitHub</button>",
+      "css": ".ds-btn-dark{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:100px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .15s ease,border-color .2s ease;background:var(--color-charcoal,#111);color:var(--color-cream,#FFF8F0);}.ds-btn-dark:hover{background:var(--color-flame,#E8391D);transform:translateY(-2px);}.ds-btn-dark:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ajakan tenang berdampingan dengan tombol utama.",
+      "html": "<button class=\"ds-btn-ghost\">Kenapa bisa beda?</button>",
+      "css": ".ds-btn-ghost{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 28px;border-radius:100px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:15px;font-weight:600;line-height:1.5;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .15s ease,border-color .2s ease;background:transparent;color:var(--color-charcoal,#111);border-color:rgba(232,57,29,.15);}.ds-btn-ghost:hover{color:var(--color-flame,#E8391D);border-color:var(--color-flame,#E8391D);}.ds-btn-ghost:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Kartu putih di atas kertas krem. Varian hover memunculkan garis gradien 3px di tepi atas.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-judul\">Dilihat, bukan dibayangkan</h3><p class=\"ds-card-isi\">Tiap gerakan diperagakan model 3D bergaya sketsa dan diulang terus, disorot dari sudut yang paling jelas.</p></div>",
+      "css": ".ds-card{position:relative;overflow:hidden;background:#fff;border:1px solid rgba(232,57,29,.15);border-radius:20px;padding:24px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;}.ds-card::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--color-flame,#E8391D),var(--color-amber,#F5A623));opacity:0;transition:opacity .2s ease;}.ds-card:hover{transform:translateY(-4px);box-shadow:0 4px 32px rgba(232,57,29,.08);border-color:rgba(232,57,29,.3);}.ds-card:hover::before{opacity:1;}.ds-card-judul{margin:0 0 12px;font-family:var(--font-display,'Bricolage Grotesque',sans-serif);font-size:22px;font-weight:700;line-height:1.15;letter-spacing:-.025em;color:var(--color-charcoal,#111);}.ds-card-isi{margin:0;font-family:var(--font-body,'DM Sans',sans-serif);font-size:14px;line-height:1.7;color:var(--color-mid,#555);}"
+    },
+    {
+      "name": "Chip Gerakan",
+      "kind": "chip",
+      "refersTo": "chip-gerakan",
+      "description": "Baris pemilih gerakan yang digulir mendatar. Yang aktif menjadi hitam pekat dengan nomor amber.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\"><span class=\"ds-chip-no\">1</span>Berdiri dan niat</button><button class=\"ds-chip is-aktif\" aria-current=\"true\"><span class=\"ds-chip-no\">2</span>Takbiratul ihram</button><button class=\"ds-chip\"><span class=\"ds-chip-no\">3</span>Bersedekap</button></div>",
+      "css": ".ds-chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;}.ds-chip{flex:none;display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 16px 0 8px;border-radius:100px;border:1px solid rgba(232,57,29,.15);background:#fff;font-family:var(--font-body,'DM Sans',sans-serif);font-size:12px;font-weight:600;color:var(--color-mid,#555);cursor:pointer;transition:border-color .2s ease,color .15s ease,background .2s ease;}.ds-chip:hover{border-color:var(--color-flame,#E8391D);color:var(--color-charcoal,#111);}.ds-chip:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}.ds-chip-no{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:rgba(232,57,29,.06);color:var(--color-ember,#A0341A);font-size:11px;font-weight:700;}.ds-chip.is-aktif{background:var(--color-charcoal,#111);border-color:var(--color-charcoal,#111);color:var(--color-cream,#FFF8F0);}.ds-chip.is-aktif .ds-chip-no{background:rgba(255,248,240,.16);color:var(--color-amber,#F5A623);}"
+    },
+    {
+      "name": "Pemilih Mazhab",
+      "kind": "custom",
+      "refersTo": "mazhab-option",
+      "description": "Kontrol tersegmen penentu rujukan. Mengubahnya mengubah peragaan 3D sekaligus dalil yang tampil.",
+      "html": "<div class=\"ds-mazhab-wrap\"><div class=\"ds-mazhab-label\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5.2A1.7 1.7 0 0 1 5.7 3.5H19v15.8H5.7A1.7 1.7 0 0 0 4 21z\"/><path d=\"M4 5.2v13.6\"/><path d=\"M8 8h7M8 11.5h5\"/></svg> Rujukan yang dipakai</div><div class=\"ds-mazhab\" role=\"group\"><button class=\"ds-mazhab-opt is-pilih\" aria-pressed=\"true\">Syafi'i</button><button class=\"ds-mazhab-opt\" aria-pressed=\"false\">Hanafi</button><button class=\"ds-mazhab-opt\" aria-pressed=\"false\">Maliki</button><button class=\"ds-mazhab-opt\" aria-pressed=\"false\">Hambali</button></div><p class=\"ds-mazhab-note\">Semua pilihan di atas berdalil.</p></div>",
+      "css": ".ds-mazhab-wrap{padding:16px;border-radius:20px;background:var(--color-parchment,#FFF0E0);border:1px solid rgba(232,57,29,.15);}.ds-mazhab-label{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-ember,#A0341A);}.ds-mazhab-label svg{color:var(--color-flame,#E8391D);}.ds-mazhab{display:flex;gap:4px;padding:4px;border-radius:100px;background:rgba(17,17,17,.05);border:1px solid rgba(17,17,17,.06);}.ds-mazhab-opt{flex:1;min-height:40px;padding:0 12px;border:none;border-radius:100px;background:transparent;font-family:var(--font-body,'DM Sans',sans-serif);font-size:13px;font-weight:600;color:var(--color-mid,#555);white-space:nowrap;cursor:pointer;transition:background .2s ease,color .15s ease;}.ds-mazhab-opt:hover{color:var(--color-charcoal,#111);}.ds-mazhab-opt:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}.ds-mazhab-opt.is-pilih{background:var(--color-charcoal,#111);color:var(--color-cream,#FFF8F0);box-shadow:0 2px 10px rgba(17,17,17,.18);}.ds-mazhab-note{margin:12px 0 0;font-family:var(--font-body,'DM Sans',sans-serif);font-size:12px;line-height:1.5;color:var(--color-light,#999);}"
+    },
+    {
+      "name": "Kutipan Dalil",
+      "kind": "custom",
+      "refersTo": "dalil",
+      "description": "Blok kutipan bergaris tepi kiri amber. Teks tampil utuh; ruas yang dirujuk distabilo, sisanya diredupkan.",
+      "html": "<div class=\"ds-dalil\"><div class=\"ds-dalil-ruj\">HR Bukhari no. 735<span class=\"ds-dalil-perawi\">Dari Ibnu Umar</span></div><div class=\"ds-dalil-arab\" lang=\"ar\" dir=\"rtl\">كَانَ رَسُولُ اللَّهِ ﷺ يَرْفَعُ يَدَيْهِ حَذْوَ مَنْكِبَيْهِ</div><div class=\"ds-dalil-arti\"><span class=\"ds-redup\">Rasulullah ﷺ biasa </span><mark class=\"ds-sorot\">mengangkat kedua tangannya sejajar dengan bahunya</mark><span class=\"ds-redup\"> ketika memulai shalat.</span></div><div class=\"ds-dalil-derajat\"><span class=\"ds-badge-sahih\">Shahih</span></div><div class=\"ds-dalil-tautan\"><a href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M10.6 13.4a3.6 3.6 0 0 0 5.4.4l2.2-2.2a3.6 3.6 0 0 0-5.1-5.1l-1.2 1.2\"/><path d=\"M13.4 10.6a3.6 3.6 0 0 0-5.4-.4l-2.2 2.2a3.6 3.6 0 0 0 5.1 5.1l1.2-1.2\"/></svg> Periksa di sumbernya</a></div></div>",
+      "css": ".ds-dalil{border-left:3px solid var(--color-amber,#F5A623);padding-left:16px;}.ds-dalil-ruj{font-family:var(--font-body,'DM Sans',sans-serif);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--color-ember,#A0341A);margin-bottom:8px;}.ds-dalil-perawi{display:block;margin-top:3px;font-weight:500;letter-spacing:0;text-transform:none;color:var(--color-light,#999);}.ds-dalil-arab{direction:rtl;text-align:right;font-family:'Times New Roman','Traditional Arabic',serif;font-size:21px;line-height:2;color:var(--color-charcoal,#111);margin-bottom:12px;}.ds-dalil-arti{font-family:var(--font-body,'DM Sans',sans-serif);font-size:14px;font-style:italic;line-height:1.7;color:var(--color-mid,#555);}.ds-sorot{background:rgba(245,166,35,.32);color:inherit;padding:1px 2px;border-radius:3px;}.ds-redup{opacity:.55;}.ds-dalil-derajat{margin-top:8px;}.ds-badge-sahih{display:inline-flex;align-items:center;padding:4px 12px;border-radius:100px;background:rgba(27,94,59,.1);color:var(--color-green,#1B5E3B);font-family:var(--font-body,'DM Sans',sans-serif);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}.ds-dalil-tautan{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(232,57,29,.15);}.ds-dalil-tautan a{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:12px;font-weight:600;color:var(--color-ember,#A0341A);text-decoration:none;}.ds-dalil-tautan a:hover{color:var(--color-flame,#E8391D);text-decoration:underline;}.ds-dalil-tautan svg{color:var(--color-flame,#E8391D);}"
+    },
+    {
+      "name": "Kartu Bacaan",
+      "kind": "card",
+      "refersTo": "bacaan-card",
+      "description": "Lafaz yang dibaca: Arab besar, latin miring, arti sehari-hari, lalu catatan cara membacanya.",
+      "html": "<div class=\"ds-bacaan\"><h3 class=\"ds-bacaan-judul\">Takbir</h3><div class=\"ds-bacaan-arab\" lang=\"ar\" dir=\"rtl\">اللَّهُ أَكْبَرُ</div><div class=\"ds-bacaan-latin\">allahu akbaru</div><div class=\"ds-bacaan-arti\">Allah Maha Besar.</div><p class=\"ds-bacaan-note\">Diucapkan setiap kali berpindah gerakan.</p></div>",
+      "css": ".ds-bacaan{background:#fff;border:1px solid rgba(232,57,29,.15);border-radius:20px;padding:20px;}.ds-bacaan-judul{margin:0 0 16px;font-family:var(--font-display,'Bricolage Grotesque',sans-serif);font-size:15px;font-weight:700;letter-spacing:-.025em;color:var(--color-charcoal,#111);}.ds-bacaan-arab{direction:rtl;text-align:right;font-family:'Times New Roman','Traditional Arabic',serif;font-size:26px;line-height:2.1;color:var(--color-charcoal,#111);}.ds-bacaan-latin{margin-top:12px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:15px;font-style:italic;line-height:1.7;color:var(--color-charcoal,#111);}.ds-bacaan-arti{margin-top:8px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:14px;line-height:1.7;color:var(--color-mid,#555);}.ds-bacaan-note{margin:12px 0 0;font-family:var(--font-body,'DM Sans',sans-serif);font-size:12px;color:var(--color-light,#999);}"
+    },
+    {
+      "name": "Lencana Derajat",
+      "kind": "chip",
+      "refersTo": "badge-sahih",
+      "description": "Derajat hadits, selalu ditampilkan. Hijau untuk sahih, amber untuk lemah — yang lemah tidak disembunyikan.",
+      "html": "<div class=\"ds-badges\"><span class=\"ds-badge ds-badge-sahih\">Shahih</span><span class=\"ds-badge ds-badge-lemah\">Dha'if oleh Al-Albani</span><span class=\"ds-badge ds-badge-hukum\">Rukun</span></div>",
+      "css": ".ds-badges{display:flex;flex-wrap:wrap;gap:8px;}.ds-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:100px;font-family:var(--font-body,'DM Sans',sans-serif);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}.ds-badge-sahih{background:rgba(27,94,59,.1);color:var(--color-green,#1B5E3B);}.ds-badge-lemah{background:rgba(245,166,35,.16);color:#8A5A00;}.ds-badge-hukum{background:rgba(232,57,29,.06);color:var(--color-ember,#A0341A);}"
+    },
+    {
+      "name": "Navigasi",
+      "kind": "nav",
+      "description": "Bar menempel berlatar krem 92% dengan blur, wordmark Ember, tautan aktif berwarna Flame.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-brand\" href=\"#\"><span class=\"ds-nav-nama\">Salat</span><span class=\"ds-nav-sub\">by Flavida</span></a><div class=\"ds-nav-menu\"><a href=\"#\" class=\"is-aktif\">Gerakan</a><a href=\"#\">Salat Lengkap</a><a href=\"#\">Rujukan</a></div></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px;padding:0 20px;background:rgba(255,248,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(232,57,29,.15);}.ds-nav-brand{display:flex;align-items:baseline;gap:7px;text-decoration:none;}.ds-nav-nama{font-family:var(--font-display,'Bricolage Grotesque',sans-serif);font-size:20px;font-weight:800;letter-spacing:-.025em;color:var(--color-ember,#A0341A);}.ds-nav-sub{font-family:var(--font-body,'DM Sans',sans-serif);font-size:12px;color:var(--color-light,#999);}.ds-nav-menu{display:flex;align-items:center;gap:20px;}.ds-nav-menu a{font-family:var(--font-body,'DM Sans',sans-serif);font-size:13px;font-weight:600;color:var(--color-mid,#555);text-decoration:none;white-space:nowrap;}.ds-nav-menu a:hover,.ds-nav-menu a.is-aktif{color:var(--color-flame,#E8391D);}.ds-nav-menu a:focus-visible{outline:2px solid var(--color-flame,#E8391D);outline-offset:3px;border-radius:6px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Naskah yang Dibuka Utuh",
+    "overview": "Yang jadi pahlawan di situs ini bukan antarmukanya, melainkan teksnya. Dalil tampil lengkap — teks Arab beserta sanadnya, terjemahan penuh, derajatnya apa adanya — dan peragaan 3D-nya melayani teks itu, bukan sebaliknya. Karena itu setiap keputusan visual di sini diukur dengan satu pertanyaan: apakah ini membuat naskahnya lebih mudah dibaca dan diperiksa, atau justru menghalanginya.\n\nDari situ turun bahan-bahannya. Latar krem hangat seperti kertas, bukan putih layar. Model manusianya digambar dengan grafit tembus pandang yang garis tepinya bergetar seperti coretan pensil, jadi ia terbaca sebagai sketsa penjelas di halaman yang sama dengan teksnya — bukan sebagai karakter 3D yang bersaing perhatian. Amber dipakai persis seperti stabilo: menandai ruas kalimat yang sedang dirujuk, sementara sisanya diredupkan tapi tetap terbaca. Tidak ada yang disembunyikan supaya kartunya rapi.\n\nWataknya hangat dan rendah hati. Permukaan diam saat istirahat, sudutnya lembut, bayangannya tipis dan hanya muncul sebagai jawaban atas sentuhan. Antarmukanya tidak pernah menuntut perhatian — ia mendampingi orang yang sedang sungkan belajar, bukan memimpin dia. Dua rupa yang ditolak secara sadar: estetika poster dakwah (hijau-emas, bingkai kaligrafi berukir, foto masjid stok, ayat ditempel di atas gradien) yang justru membuat pemula merasa ini bukan untuk dia; dan dashboard SaaS generik (abu dingin, biru, Inter, kartu tanpa pendirian) yang membuat ibadah terasa seperti perkakas kantor.",
+    "keyCharacteristics": [
+      "Kertas hangat dan grafit, bukan layar putih dan warna solid",
+      "Kutipan tampil utuh; penekanan lewat sorotan, tidak pernah lewat pemotongan",
+      "Rata saat istirahat — kedalaman dibuat lewat lapisan warna, bukan bayangan",
+      "Aksen merah konsisten tapi terkendali; teks yang memimpin halaman",
+      "Setiap baris Arab selalu ditemani latin dan artinya"
+    ],
+    "rules": [
+      {
+        "name": "Aturan Stabilo",
+        "section": "colors",
+        "body": "Amber hanya boleh menandai ruas teks yang sedang dirujuk. Kalau amber muncul tanpa ada sumber yang sedang ditunjuk, itu dekorasi dan harus dicabut."
+      },
+      {
+        "name": "Aturan Dua Belas Persen",
+        "section": "colors",
+        "body": "Flame menutup paling banyak ~12% permukaan layar mana pun, mengikuti proporsi Flavida (60% krem / 20% charcoal / 12% flame). Naskahnya yang memimpin halaman, bukan aksennya."
+      },
+      {
+        "name": "Aturan Hitam untuk Pilihan",
+        "section": "colors",
+        "body": "Keadaan terpilih dinyatakan dengan Deep Charcoal penuh, bukan dengan merah. Merah menandai apa yang bisa dilakukan; hitam menandai di mana kamu berada sekarang."
+      },
+      {
+        "name": "Aturan Latin Selalu Menemani",
+        "section": "typography",
+        "body": "Tidak ada baris Arab yang berdiri sendiri. Setiap teks Arab wajib punya tulisan latin dan artinya di bawahnya — banyak penggunanya belum bisa membaca huruf Arab."
+      },
+      {
+        "name": "Aturan Arab Tidak Pernah Dikecilkan",
+        "section": "typography",
+        "body": "Teks Arab tidak pernah turun di bawah 21px dan tinggi barisnya tidak pernah di bawah 2. Kalau ruang kurang, yang menyusut adalah elemen lain."
+      },
+      {
+        "name": "Aturan Istilah Dijelaskan",
+        "section": "typography",
+        "body": "Istilah fikih (iftirasy, tawarruk, i'tidal) diberi penjelasan singkat saat pertama muncul di sebuah halaman, bukan diasumsikan."
+      },
+      {
+        "name": "Aturan Rata Sampai Disentuh",
+        "section": "elevation",
+        "body": "Kalau sebuah permukaan punya bayangan saat istirahat, itu keliru — kecuali panggung 3D, yang memang lembar terpisah."
+      },
+      {
+        "name": "Aturan Pil dan Kartu",
+        "section": "shapes",
+        "body": "Bisa ditekan atau menyatakan status → pil. Menampung isi → kartu 20px. Tidak ada bentuk ketiga tanpa alasan yang bisa dijelaskan."
+      }
+    ],
+    "dos": [
+      "Do tampilkan kutipan utuh dan tandai bagian yang dirujuk dengan mark.ayat-sorot (amber 32%), sambil meredupkan sisanya ke opacity 0.55. Penekanan lewat sorotan, tidak pernah lewat pemotongan.",
+      "Do sertakan lencana derajat pada setiap hadits — hijau untuk sahih, amber untuk lemah. Derajat yang merugikan pendapat populer tetap ditampilkan.",
+      "Do beri setiap baris Arab tulisan latin dan artinya.",
+      "Do pakai Deep Charcoal untuk menyatakan keadaan terpilih, dan Flame untuk menyatakan apa yang bisa dilakukan.",
+      "Do biarkan permukaan rata saat istirahat; bayangan hanya sebagai jawaban atas hover atau keadaan aktif.",
+      "Do pakai garis tepi 1px merah samar (rgba(232, 57, 29, 0.15)), bukan abu netral.",
+      "Do hormati prefers-reduced-motion — pose berpindah tanpa animasi, pola latar berhenti bergerak.",
+      "Do pastikan halaman tetap utuh tanpa WebGL."
+    ],
+    "donts": [
+      "Don't memakai estetika poster dakwah: hijau-emas, bingkai kaligrafi berukir, foto masjid stok, atau ayat yang ditempel di atas gradien.",
+      "Don't memakai rupa dashboard SaaS generik: abu dingin, biru, Inter, atau kartu tanpa sudut pandang.",
+      "Don't memenggal kutipan supaya muat di kartu. Kalau ruangnya kurang, yang diubah tata letaknya.",
+      "Don't memakai amber untuk hiasan. Amber selalu berarti \"perhatikan bagian ini\".",
+      "Don't memakai Canopy Green untuk apa pun selain lencana derajat sahih.",
+      "Don't memberi bayangan pada permukaan yang sedang diam.",
+      "Don't memakai Flame pada bidang besar; ia aksen, bukan latar.",
+      "Don't memanggil huruf, skrip, atau gambar dari server luar — huruf disimpan sendiri di assets/font/, dan situs harus tetap nol permintaan ke luar.",
+      "Don't menambahkan lencana pencapaian, runtutan hari, atau elemen gamifikasi apa pun."
+    ]
+  }
+}

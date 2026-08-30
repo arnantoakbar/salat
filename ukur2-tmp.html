@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>u</title></head><body><pre id="out">-</pre>
+<script>
+function ukur(w,h){return new Promise(function(res){
+ var f=document.createElement('iframe');
+ f.style.cssText='width:'+w+'px;height:'+h+'px;border:0;position:absolute;left:-9999px';
+ f.src='gerakan.html?g=duduk-antara-sujud&m=syafii&r='+Math.random();
+ f.onload=function(){setTimeout(function(){
+  var d=f.contentDocument, a=d.getElementById('apung'), ab=a.getBoundingClientRect();
+  var main=d.getElementById('utama');
+  res({layar:w+'x'+h,
+   apung:'kiri '+Math.round(ab.left)+' kanan '+Math.round(ab.right)+' lebar '+Math.round(ab.width),
+   muatHorizontal: ab.left>=0 && ab.right<=w,
+   tombolBar: d.querySelectorAll('#apung button').length,
+   scrollWidthDoc: d.documentElement.scrollWidth,
+   overflow: d.documentElement.scrollWidth>w,
+   namaTerpotong: d.getElementById('apung-nama').scrollWidth > d.getElementById('apung-nama').clientWidth
+  }); f.remove();},1400);};
+ document.body.appendChild(f);});}
+(async function(){var r=[];r.push(await ukur(390,844));r.push(await ukur(360,780));r.push(await ukur(1280,800));
+ document.getElementById('out').textContent=JSON.stringify(r,null,1);})();
+</script></body></html>

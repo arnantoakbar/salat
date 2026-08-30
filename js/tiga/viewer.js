@@ -162,7 +162,11 @@
     this._sebelum = null;
     this._terlihat = true;
     this._raf = null;
+    this._frameTerakhir = 0;
     this.siap = true;
+
+    this._pasangPenjaga();
+    this._pasangKonteks();
 
     this.terapkanPose('berdiri');
     this._gambarSekali();
@@ -222,6 +226,50 @@
     document.addEventListener('visibilitychange', function () { v._aturLoop(); });
   };
 
+  /*
+   * Penjaga loop.
+   *
+   * requestAnimationFrame bisa berhenti dikirim tanpa memberi tahu siapa pun:
+   * peramban ponsel menghentikannya saat aplikasi ditaruh di latar belakang,
+   * sebagian menahannya saat baterai menipis, dan panel yang tidak sedang
+   * digambar peramban juga tidak menerimanya. Kalau itu terjadi, animasinya
+   * membeku selamanya padahal panggungnya kelihatan.
+   *
+   * Penjaga ini memeriksa berkala: kalau panggung seharusnya berjalan tapi
+   * sudah dua detik tidak ada frame yang tergambar, loopnya dinyalakan ulang.
+   */
+  Viewer.prototype._pasangPenjaga = function () {
+    var v = this;
+    this._penjaga = setInterval(function () {
+      if (!v._terlihat || document.hidden || !v.jalan) return;
+      if (performance.now() - v._frameTerakhir < 2000) return;
+      if (v._raf !== null) cancelAnimationFrame(v._raf);
+      v._raf = null;
+      v._sebelum = null;
+      v._mulaiLoop();
+    }, 2000);
+  };
+
+  /*
+   * Konteks WebGL bisa hilang — pada ponsel ini biasa terjadi saat aplikasi
+   * lama di latar belakang atau memori menipis. three.js sudah memulihkan
+   * sisi grafisnya sendiri, tapi loop di sini perlu dijalankan lagi, dan
+   * selama konteksnya hilang pengguna berhak tahu kenapa gambarnya berhenti.
+   */
+  Viewer.prototype._pasangKonteks = function () {
+    var v = this, kanvas = this.renderer.domElement;
+    kanvas.addEventListener('webglcontextlost', function (e) {
+      e.preventDefault();
+      v.wadah.classList.add('konteks-hilang');
+    });
+    kanvas.addEventListener('webglcontextrestored', function () {
+      v.wadah.classList.remove('konteks-hilang');
+      v._sebelum = null;
+      v._frameTerakhir = performance.now();
+      v._aturLoop();
+    });
+  };
+
   /* Menggambar satu frame di luar loop.
      Dipakai saat panggung dibuat atau gerakannya diganti sementara loop
      sedang dijeda (tab di latar belakang, panggung di luar layar). Tanpa
@@ -230,6 +278,7 @@
   Viewer.prototype._gambarSekali = function () {
     this.kamera.perbarui(0, true);
     this.renderer.render(this.scene, this.kamera.obj);
+    this._frameTerakhir = performance.now();
   };
 
   Viewer.prototype._aturLoop = function () {
@@ -280,7 +329,20 @@
     this._sorotBaku = sorotBaku || 'penuh';
     this._idx = -1;
     this._majuLangkah(true);
-    if (this._raf === null) this._gambarSekali();
+
+    /*
+     * Kalau loopnya sedang dijeda — panggung tergulir keluar layar, atau tab
+     * sedang di latar belakang — tidak akan ada frame yang menyelesaikan
+     * perpindahan pose. Tanpa penanganan ini panggung membeku pada sikap
+     * gerakan SEBELUMNYA sementara keterangannya sudah menyebut gerakan yang
+     * baru. Jadi saat dijeda, sikapnya dipasang langsung ke tujuan.
+     */
+    if (this._raf === null) {
+      this.terapkanPose(this._langkah[this._idx].pose);
+      this._fase = 'tahan';
+      this._t = 0;
+      this._gambarSekali();
+    }
   };
 
   Viewer.prototype._majuLangkah = function (dariLuar) {
@@ -355,6 +417,7 @@
 
       v.kamera.perbarui(dt / 1000, KURANG_GERAK);
       v.renderer.render(v.scene, v.kamera.obj);
+      v._frameTerakhir = kini;
     }
     this._raf = requestAnimationFrame(frame);
   };

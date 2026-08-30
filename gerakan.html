@@ -7,15 +7,15 @@
 <meta name="description" content="Pilih gerakan salat, lihat animasinya berulang dari berbagai sudut, lengkap dengan bacaan dan dalilnya. Ganti rujukan mazhab, gerakannya menyesuaikan langsung.">
 <meta name="theme-color" content="#FFF8F0">
 <link rel="icon" href="assets/mark-color.svg">
-<link rel="stylesheet" href="css/font.css?v=9">
-<link rel="stylesheet" href="css/tokens.css?v=9">
-<link rel="stylesheet" href="css/base.css?v=9">
-<link rel="stylesheet" href="css/app.css?v=9">
+<link rel="stylesheet" href="css/font.css?v=15">
+<link rel="stylesheet" href="css/tokens.css?v=15">
+<link rel="stylesheet" href="css/base.css?v=15">
+<link rel="stylesheet" href="css/app.css?v=15">
 </head>
 <body>
 <a class="skip-link" href="#utama">Lompat ke isi</a>
 
-<script src="js/sprite.js?v=9"></script>
+<script src="js/sprite.js?v=15"></script>
 
 <nav class="nav">
   <div class="wrap nav-inner">
@@ -43,7 +43,7 @@
   </div>
 </nav>
 
-<main id="utama" class="section" style="padding-top: var(--space-8)">
+<main id="utama" class="section beri-ruang-apung" style="padding-top: var(--space-8)">
   <div class="wrap">
 
     <div class="lihat-kepala">
@@ -74,14 +74,6 @@
                 dibaca seperti biasa.</p>
             </div>
           </div>
-          <div class="panggung-aksi">
-            <button type="button" id="btn-ulang" aria-label="Ulangi gerakan">
-              <svg class="ic" aria-hidden="true"><use href="#i-ulang"></use></svg>
-            </button>
-            <button type="button" id="btn-jeda" aria-label="Jeda gerakan">
-              <svg class="ic" aria-hidden="true"><use href="#i-jeda"></use></svg>
-            </button>
-          </div>
         </div>
 
         <p class="panggung-bantuan">
@@ -102,16 +94,6 @@
           </p>
         </div>
 
-        <div class="lihat-nav">
-          <button class="btn btn-ghost btn-sm" type="button" id="btn-prev">
-            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kiri"></use></svg>
-            Sebelumnya
-          </button>
-          <button class="btn btn-ghost btn-sm" type="button" id="btn-next">
-            Berikutnya
-            <svg class="ic ic-sm" aria-hidden="true"><use href="#i-kanan"></use></svg>
-          </button>
-        </div>
       </div>
 
       <!-- Kanan: hukum, bacaan, perbedaan, dalil -->
@@ -122,6 +104,28 @@
 
     </div>
   </div>
+
+  <!--
+    Navigasi mengambang. Sebelumnya tombol pindah gerakan ada di dasar kolom
+    kiri yang menempel — dan karena kolom itu lebih tinggi daripada layar,
+    tombolnya tidak pernah bisa dijangkau. Di sini ia selalu ada, di ponsel
+    maupun desktop.
+  -->
+  <nav class="apung" id="apung" aria-label="Pindah gerakan">
+    <button class="apung-tombol" type="button" id="btn-prev" aria-label="Gerakan sebelumnya">
+      <svg class="ic" aria-hidden="true"><use href="#i-kiri"></use></svg>
+    </button>
+    <button class="apung-kini" type="button" id="btn-kini" aria-label="Lihat peragaannya">
+      <span class="apung-posisi" id="apung-posisi"></span>
+      <span class="apung-nama" id="apung-nama"></span>
+    </button>
+    <button class="apung-tombol" type="button" id="btn-jeda" aria-label="Jeda gerakan">
+      <svg class="ic" aria-hidden="true"><use href="#i-jeda"></use></svg>
+    </button>
+    <button class="apung-tombol" type="button" id="btn-next" aria-label="Gerakan berikutnya">
+      <svg class="ic" aria-hidden="true"><use href="#i-kanan"></use></svg>
+    </button>
+  </nav>
 </main>
 
 <footer class="footer">
@@ -144,15 +148,15 @@
 </footer>
 
 <script src="js/vendor/three.min.js"></script>
-<script src="js/tiga/rig.js?v=9"></script>
-<script src="js/tiga/pose.js?v=9"></script>
-<script src="js/tiga/kamera.js?v=9"></script>
-<script src="js/tiga/viewer.js?v=9"></script>
-<script src="data/dalil.js?v=9"></script>
-<script src="data/bacaan.js?v=9"></script>
-<script src="data/gerakan.js?v=9"></script>
-<script src="js/ui-dalil.js?v=9"></script>
-<script src="js/ui-gerakan.js?v=9"></script>
-<script src="js/ui-nav.js?v=9"></script>
+<script src="js/tiga/rig.js?v=15"></script>
+<script src="js/tiga/pose.js?v=15"></script>
+<script src="js/tiga/kamera.js?v=15"></script>
+<script src="js/tiga/viewer.js?v=15"></script>
+<script src="data/dalil.js?v=15"></script>
+<script src="data/bacaan.js?v=15"></script>
+<script src="data/gerakan.js?v=15"></script>
+<script src="js/ui-dalil.js?v=15"></script>
+<script src="js/ui-gerakan.js?v=15"></script>
+<script src="js/ui-nav.js?v=15"></script>
 </body>
 </html>

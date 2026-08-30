@@ -27,9 +27,11 @@
   var elRingkas = document.getElementById('ringkas-gerakan');
   var elHukum = document.getElementById('hukum-gerakan');
   var btnJeda = document.getElementById('btn-jeda');
-  var btnUlang = document.getElementById('btn-ulang');
   var btnPrev = document.getElementById('btn-prev');
   var btnNext = document.getElementById('btn-next');
+  var btnKini = document.getElementById('btn-kini');
+  var elApungPosisi = document.getElementById('apung-posisi');
+  var elApungNama = document.getElementById('apung-nama');
 
   var DAFTAR = window.GERAKAN;
   var viewer = null;
@@ -148,10 +150,35 @@
     });
   }
 
+  function nomorKini() {
+    var n = 0;
+    DAFTAR.forEach(function (g, i) { if (g.id === kini.gerakan) n = i; });
+    return n;
+  }
+
+  function gambarApung() {
+    var i = nomorKini();
+    elApungPosisi.textContent = 'Gerakan ' + (i + 1) + ' dari ' + DAFTAR.length;
+    elApungNama.textContent = DAFTAR[i].nama;
+  }
+
+  /*
+   * Membawa pandangan kembali ke panggung. Dipakai setelah gerakan diganti
+   * dari bar mengambang: orang menekan "berikutnya" karena ingin melihat
+   * peragaannya, dan sering kali sedang membaca dalil jauh di bawah.
+   * Di layar lebar panggung sudah menempel, jadi tidak perlu digeser.
+   */
+  function lihatPanggung() {
+    if (window.matchMedia('(min-width: 1024px)').matches) return;
+    var halus = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    panggung.scrollIntoView({ behavior: halus ? 'smooth' : 'auto', block: 'center' });
+  }
+
   function perbarui(dorongRiwayat) {
     gambarUrutan();
     gambarMazhab();
     gambarPanel();
+    gambarApung();
     jalankan();
     geserKeAktif();
     tulisAlamat(!dorongRiwayat);
@@ -170,9 +197,9 @@
   }
 
   function geser(arah) {
-    var i = 0;
-    DAFTAR.forEach(function (g, n) { if (g.id === kini.gerakan) i = n; });
+    var i = nomorKini();
     pilihGerakan(DAFTAR[(i + arah + DAFTAR.length) % DAFTAR.length].id);
+    lihatPanggung();
   }
 
   elUrutan.addEventListener('click', function (e) {
@@ -197,9 +224,7 @@
       (jalan ? 'i-jeda' : 'i-putar') + '"></use></svg>';
   });
 
-  btnUlang.addEventListener('click', function () {
-    if (viewer && viewer.siap) viewer.ulangi();
-  });
+  btnKini.addEventListener('click', lihatPanggung);
 
   // Panah kiri/kanan memindah gerakan, selama fokus tidak sedang di kontrol lain.
   document.addEventListener('keydown', function (e) {
